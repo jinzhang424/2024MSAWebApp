@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jinzh\\source\\repos\\backend\\backend.csproj": {}
+    "C:\\Users\\jinzh\\OneDrive\\Desktop\\2024MSAWebApp\\backend\\backend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jinzh\\source\\repos\\backend\\backend.csproj": {
+    "C:\\Users\\jinzh\\OneDrive\\Desktop\\2024MSAWebApp\\backend\\backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jinzh\\source\\repos\\backend\\backend.csproj",
+        "projectUniqueName": "C:\\Users\\jinzh\\OneDrive\\Desktop\\2024MSAWebApp\\backend\\backend.csproj",
         "projectName": "backend",
-        "projectPath": "C:\\Users\\jinzh\\source\\repos\\backend\\backend.csproj",
+        "projectPath": "C:\\Users\\jinzh\\OneDrive\\Desktop\\2024MSAWebApp\\backend\\backend.csproj",
         "packagesPath": "C:\\Users\\jinzh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jinzh\\source\\repos\\backend\\obj\\",
+        "outputPath": "C:\\Users\\jinzh\\OneDrive\\Desktop\\2024MSAWebApp\\backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jinzh\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -46,6 +46,22 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Humanizer": {
+              "target": "Package",
+              "version": "[2.7.9, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
