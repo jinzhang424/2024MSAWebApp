@@ -4,7 +4,7 @@ namespace Repositories
 {
     public interface IMilkTeaRepository
     {
-        Task<IEnumerable<MilkTea>> GetAllStudentsAsync();
+        Task<IEnumerable<MilkTea>> GetAllMilkTeasAsync();
         Task<Models.MilkTea> GetMilkTeaByIdAsync(long id);
         Task AddMilkTeaAsync(MilkTea milkTea);
         Task UpdateMilkTeaAsync(MilkTea milkTea);
