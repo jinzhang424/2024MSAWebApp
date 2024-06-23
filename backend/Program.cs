@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -16,6 +18,19 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+if (builder.Environment.IsDevelopment())
+{
+    builder.Services.AddDbContext<MilkTeaContext>(options =>
+        options.UseInMemoryDatabase("MilkTea"));
+}
+else
+{
+    builder.Services.AddDbContext<MilkTeaContext>(options =>
+        options.UseSqlServer(builder.Configuration.GetConnectionString("MilkTeaContext") ?? throw new InvalidOperationException("Connection string 'MilkTeaContext' not found.")));
+}
+
+
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
@@ -23,3 +38,5 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+
