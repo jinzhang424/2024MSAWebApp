@@ -5,11 +5,11 @@ namespace Repositories
     public interface IMilkTeaRepository
     {
         Task<IEnumerable<Models.MilkTea>> GetAllStudentsAsync();
-        Task<Models.MilkTea> GetStudentByIdAsync(long id);
-        Task AddStudentAsync(Models.MilkTea milkTea);
-        Task UpdateStudentAsync(Models.MilkTea milkTea);
-        Task DeleteStudentAsync(long id);
-        Task<bool> StudentExistsAsync(long id);
-        Task BulkAddStudentsAsync(IEnumerable<Models.MilkTea> milkTea);
+        Task<Models.MilkTea> GetMilkTeaByIdAsync(long id);
+        Task AddMilkTeaAsync(Models.MilkTea milkTea);
+        Task UpdateMilkTeaAsync(Models.MilkTea milkTea);
+        Task DeleteMilkTeaAsync(long id);
+        Task<bool> MilkTeaExistsAsync(long id);
+        Task BulkMilkTeasAsync(IEnumerable<Models.MilkTea> milkTea);
     }
 }
