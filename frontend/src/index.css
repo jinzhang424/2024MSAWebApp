@@ -31,8 +31,12 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font:italic;
+  font-size: 2em;
+  color: #ffffff;
+  position: fixed;
+  top: -20px;
+  left: 10px;
 }
 
 button {
