@@ -82,6 +82,7 @@ namespace backend.Controllers {
         }
 
         //POST: Create milk teas by bulk
+        [HttpPost("bulk")]
         public async Task<ActionResult<MilkTea>> BulkCreateMilkTea(IEnumerable<MilkTea> milkTeas) {
             
             if (milkTeas == null || !milkTeas.Any()) {
