@@ -10,6 +10,6 @@ namespace Repositories
         Task UpdateMilkTeaAsync(MilkTea milkTea);
         Task DeleteMilkTeaAsync(long id);
         Task<bool> MilkTeaExistsAsync(long id);
-        Task BulkMilkTeasAsync(IEnumerable<MilkTea> milkTea);
+        Task BulkAddMilkTeasAsync(IEnumerable<MilkTea> milkTea);
     }
 }

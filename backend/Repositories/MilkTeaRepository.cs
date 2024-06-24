@@ -40,7 +40,7 @@ namespace Repositories {
             return await _context.MilkTea.AnyAsync(e => e.Id == id);
         }
 
-        public async Task BulkMilkTeasAsync(IEnumerable<MilkTea> milkTea) {
+        public async Task BulkAddMilkTeasAsync(IEnumerable<MilkTea> milkTea) {
             await _context.MilkTea.AddRangeAsync(milkTea);
             await _context.SaveChangesAsync();
         }
