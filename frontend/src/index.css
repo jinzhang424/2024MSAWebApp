@@ -1,41 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
 *{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-body {
-  margin: 0;
-  min-height: 100vh;  
-  background-image: "boba.jpg";
-}
-
-.navBar {
-  background-color: white;
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content:space-between;
-  align-items: center;
-  gap: 2rem;
-  padding: 0 1rem;
-}
-
-nav ul {
-  width: 100%;
-  list-style: none;
-  justify-content: flex-end;
-  align-items: center;
-  display: flex;
-}
-
-nav li {
-  height: 50px;
-}
-
-nav a {
-  height: 100%;
-  padding: 0 30px;
+a {
   text-decoration: none;
-  display: flex;
-  align-items: center;
-  color: black;
 }
