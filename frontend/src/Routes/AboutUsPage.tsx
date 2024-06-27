@@ -1,4 +1,4 @@
-import NavigationBar from "../Components/NavigationBar";
+import NavigationBar from "../components/NavigationBar";
 
 export default function AboutUsPage() {
     return <>
