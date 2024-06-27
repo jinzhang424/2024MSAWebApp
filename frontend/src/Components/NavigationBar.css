@@ -3,24 +3,22 @@
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 10%;
+    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .logo {
-    font-size: 32px;
     color: wheat;
     font-weight: 700;
 }
 
 .navBar a {
     position: relative;
-    font-size: 18px;
     color: wheat;
     font-weight: 500;
-    margin-left: 40px;
+    margin-left: 2rem;
 }
 
 .navBar a::before {
