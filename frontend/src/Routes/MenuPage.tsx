@@ -5,5 +5,5 @@ export default function MenuPage() {
         <NavigationBar />   
         This is the menu page
     </>
-  }
+}
   
