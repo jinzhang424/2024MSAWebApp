@@ -19,21 +19,34 @@ export const ImageSlider = ({ data } : ImageSliderProps) => {
         setSlide(slide === data.length - 1 ? 0 : slide + 1);
     }
 
-    const preSlide = () => {
+    const prevSlide = () => {
         setSlide(slide === 0 ? data.length - 1 : slide - 1);
     }
 
 
 
     return <div className = "imageSlider">
-        <BsArrowLeftCircleFill onClick={preSlide} className="arrow leftArrow" />
+
+        <BsArrowLeftCircleFill onClick={prevSlide} className="arrow leftArrow" />
+        
         {data.map((imageItem, index) => {
-            return <img src={imageItem.src} alt = {imageItem.alt} key = {index} className={slide === index ? "imageSlide" : "slide slideHidden"}/>
+            return <img 
+                src={imageItem.src} 
+                alt = {imageItem.alt} 
+                key = {index} 
+                style={{ translate: (-100 * index) / 100 }} 
+                className={slide === index ? "imageSlide" : "slide slideHidden"}/>
         })}
+
         <BsArrowRightCircleFill onClick={nextSlide} className="arrow rightArrow" />
+
         <span className="indicators">
             {data.map((_, index) => {
-                return <button key={index} onClick={() => setSlide(index)} className={slide === index ? "indicator" : "indicator inactiveIndicator"}></button>
+                return <button 
+                    key={index} 
+                    onClick={() => setSlide(index)} 
+                    className={slide === index ? "indicator" : "indicator inactiveIndicator"}>
+                </button>
             })}
         </span>
     </div>

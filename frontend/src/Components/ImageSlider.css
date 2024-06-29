@@ -6,24 +6,21 @@
     height: 100vh;
 }
 
-.navBar a {
-    font-size: 1.2rem;
-}
-
 .imageSlide {
     display: flex;
     justify-content: center;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    
 }
 
 .arrow:hover {
+    opacity: 1;
     cursor: pointer;
 }
 
 .arrow {
+    opacity: 50%;
     position: absolute;
     width: 2rem;
     height: 2rem;

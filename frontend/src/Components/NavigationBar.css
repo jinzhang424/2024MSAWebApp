@@ -10,6 +10,10 @@
     font-size: 2.25rem;
 }
 
+.navBar a {
+    font-size: 1.2rem;
+}
+
 .logo {
     width: 10rem;
     position: relative;
