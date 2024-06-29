@@ -6,7 +6,11 @@ const NavigationBar = () => {
     <header className="header">
 
       <a href="/">
-        <img src={imgLogo} alt="Bobuzz logo" className="logo"/>
+        <img 
+          src={imgLogo} 
+          alt="Bobuzz logo" 
+          className="logo"
+        />
       </a>
       
       <nav className="navBar">

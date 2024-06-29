@@ -27,17 +27,16 @@ export const ImageSlider = ({ data } : ImageSliderProps) => {
 
     return <div className = "imageSlider">
 
-        <BsArrowLeftCircleFill onClick={prevSlide} className="arrow leftArrow" />
-        
         {data.map((imageItem, index) => {
             return <img 
                 src={imageItem.src} 
-                alt = {imageItem.alt} 
-                key = {index} 
-                style={{ translate: (-100 * index) / 100 }} 
-                className={slide === index ? "imageSlide" : "slide slideHidden"}/>
+                alt = {imageItem.alt}
+                key = {index}
+                className={ slide === index ? "slideVisible" : "slideHidden" }
+            />
         })}
 
+        <BsArrowLeftCircleFill onClick={prevSlide} className="arrow leftArrow" />
         <BsArrowRightCircleFill onClick={nextSlide} className="arrow rightArrow" />
 
         <span className="indicators">
@@ -45,9 +44,9 @@ export const ImageSlider = ({ data } : ImageSliderProps) => {
                 return <button 
                     key={index} 
                     onClick={() => setSlide(index)} 
-                    className={slide === index ? "indicator" : "indicator inactiveIndicator"}>
-                </button>
+                    className={slide === index ? "indicator" : "indicator inactiveIndicator"}
+                ></button>
             })}
         </span>
     </div>
-    };
+};

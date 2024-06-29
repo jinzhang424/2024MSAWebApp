@@ -6,19 +6,19 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
   }
-  
-  a {
-    text-decoration: none;
-  }
-  
-  .header {
-    z-index: 1;
-  }
-  
-  .arrow {
-    z-index: 2;
-  }
-  
-  .indicators {
-    z-index: 2;
-  }
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  z-index: 1;
+}
+
+.arrow {
+  z-index: 2;
+}
+
+.indicators {
+  z-index: 2;
+}
