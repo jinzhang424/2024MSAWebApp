@@ -4,6 +4,7 @@
     align-items: center;
     width: 100vw;
     height: 100vh;
+    object-fit: cover;
 }
 
 .slideVisible {
@@ -20,6 +21,7 @@
 
 .arrow:hover {
     cursor: pointer;
+    opacity: 1;
 }
 
 .arrow {
@@ -28,6 +30,7 @@
     height: 2rem;
     color: white;
     filter: drop-shadow(0px 0px 5px #555);
+    opacity: 50%;
 }
 
 .leftArrow {

@@ -9,7 +9,11 @@ export default function Root() {
 
       <div className="navBar"><NavigationBar /></div>
       <div className="imgSlider"><ImageSlider data={imageSlides}/></div>
-      <div className="specials">specials</div>
+      <div className="specials">
+        <body className="specialsText">
+          hello lorem
+        </body>
+      </div>
       <div className="news">news</div>
       <div className="contacts">contact info</div>
   </div>

@@ -10,23 +10,21 @@
     font-size: 2.25rem;
 }
 
-.navBar a {
-    font-size: 1.2rem;
-}
-
 .logo {
     width: 10rem;
     position: relative;
 }
 
-.navBar a {
+nav a {
+    font-size: 1.2rem;
     position: relative;
     color: white;
     font-weight: 500;
     margin-left: 2rem;
+    text-decoration: none;
 }
 
-.navBar a::before {
+nav a::before {
     content: '';
     position: absolute;
     top: 100%;
@@ -37,6 +35,6 @@
     transition: 0.3s;
 }
 
-.navBar a:hover::before {
+nav a:hover::before {
     width: 100%;
 }

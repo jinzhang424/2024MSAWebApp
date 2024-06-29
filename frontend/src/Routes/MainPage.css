@@ -8,33 +8,37 @@
 }
 
 .layout {
+  background-color: white ;
+  overflow: hidden;
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 0.3fr; /* 6 rows*/
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 0.3fr;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .navBar {
   z-index: 1;
   grid-row: 1 / 2;
+  grid-column: 1 / 2;
 }
 
 .imgSlider {
   grid-row: 1 / 2;
+  grid-column: 1 / 2;
 }
 
 .specials {
   grid-row: 2 / 4;
+  grid-column: 1 / 2;
 }
 
 .news {
   grid-row: 4 / 6;
+  grid-column: 1 / 2;
 }
 
 .contacts {
   grid-row: 6 / 7; 
-}
-
-a {
-  text-decoration: none;
+  grid-column: 1 / 2;
 }
 
 .arrow {
