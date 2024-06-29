@@ -5,14 +5,36 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
-  }
+}
+
+.layout {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 0.3fr; /* 6 rows*/
+}
+
+.navBar {
+  z-index: 1;
+  grid-row: 1 / 2;
+}
+
+.imgSlider {
+  grid-row: 1 / 2;
+}
+
+.specials {
+  grid-row: 2 / 4;
+}
+
+.news {
+  grid-row: 4 / 6;
+}
+
+.contacts {
+  grid-row: 6 / 7; 
+}
 
 a {
   text-decoration: none;
-}
-
-.header {
-  z-index: 1;
 }
 
 .arrow {
