@@ -1,4 +1,5 @@
 .header {
+    background-color: rgba(106, 79, 49, 0.5);
     position: fixed;
     top: 0;
     left: 0;
@@ -8,6 +9,7 @@
     justify-content: space-between;
     align-items: center;
     font-size: 2.25rem;
+
 }
 
 .logo {

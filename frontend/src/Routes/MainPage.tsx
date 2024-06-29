@@ -20,18 +20,18 @@ export default function Root() {
           <h1 className="special1Header">
             Lorem Ipsum
           </h1>
-          <body className="special1Body">
+          <div className="special1Body">
             Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 
-          </body>
+          </div>
         </div>
 
         <div className="special2">
           <h1 className="special2Header">
             Lorem Ipsum
           </h1>
-          <body className="special2Body">
+          <div className="special2Body">
             Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 
-          </body>
+          </div>
         </div>
       </div>
 
