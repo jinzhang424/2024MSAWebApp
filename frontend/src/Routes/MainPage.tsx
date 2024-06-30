@@ -2,6 +2,9 @@ import './MainPage.css';
 import NavigationBar from "../components/NavigationBar";
 import { ImageSlider } from "../components/ImageSlider";
 import { imageSlides } from "../data/imageSlides.json";
+import { Typography } from "@mui/material";
+import greenTeaLatte from "../data/specialsImages/greenTea-latte.jpg";
+import vanillaMilkTea from "../data/specialsImages/vanillaMilkTea.svg";
 
 export default function Root() {
   return <>
@@ -16,15 +19,18 @@ export default function Root() {
           Specials
         </h1>
 
+        <img src={greenTeaLatte} alt="green tea latte" className="greenTeaLatte"/>
         <div className="special1">
+
           <h1 className="special1Header">
             Lorem Ipsum
           </h1>
-          <div className="special1Body">
+          <Typography className="special1Body">
             Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 
-          </div>
+          </Typography>
         </div>
 
+        <img src={vanillaMilkTea} alt="vanilla milk tea" className="vanillaMilkTea"/>
         <div className="special2">
           <h1 className="special2Header">
             Lorem Ipsum
