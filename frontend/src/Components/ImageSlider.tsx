@@ -1,6 +1,9 @@
 import "./ImageSlider.css";
 import { useState } from "react";
-import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
+
+import Fab from '@mui/material/Fab';
+import ArrowRightIcon from "@mui/icons-material/ArrowRight";
+import ArrowLeftIcon from "@mui/icons-material/ArrowLeft";
 
 interface Image {
     src: string;
@@ -38,8 +41,13 @@ export const ImageSlider = ({ data } : ImageSliderProps) => {
                 />
             })}
 
-            <BsArrowLeftCircleFill onClick={prevSlide} className="arrow leftArrow" />
-            <BsArrowRightCircleFill onClick={nextSlide} className="arrow rightArrow" />
+            <Fab aria-label="ArrowLeftIcon" onClick={prevSlide} className="arrow leftArrow">
+                <ArrowLeftIcon />
+            </Fab>
+
+            <Fab aria-label="ArrowRightIcon" onClick={nextSlide} className="arrow rightArrow">
+                <ArrowRightIcon />
+            </Fab>
 
             <span className="indicators">
                 {data.map((_, index) => {
