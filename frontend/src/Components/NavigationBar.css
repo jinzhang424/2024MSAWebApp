@@ -2,7 +2,7 @@
     background-color: rgba(106, 79, 49, 0.5);
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
@@ -23,6 +23,7 @@ nav a {
     font-weight: 500;
     margin-left: 2rem;
     text-decoration: none;
+    right: 5%;
 }
 
 nav a::before {

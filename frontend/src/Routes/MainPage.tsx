@@ -23,21 +23,25 @@ export default function Root() {
         <div className="special1">
 
           <h1 className="special1Header">
-            Lorem Ipsum
+            Green Tea Latte
           </h1>
-          <Typography className="special1Body">
-            Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 
+          <Typography className="special2Body">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam omnis fuga reiciendis. Veritatis ipsa dignissimos quidem, maiores iure sed blanditiis fuga dicta earum delectus tempore accusamus asperiores, assumenda quibusdam magnam.
+          </Typography>
+
+          <Typography className="special2Body">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam omnis fuga reiciendis. Veritatis ipsa dignissimos quidem, maiores iure sed blanditiis fuga dicta earum delectus tempore accusamus asperiores, assumenda quibusdam magnam.
           </Typography>
         </div>
 
         <img src={vanillaMilkTea} alt="vanilla milk tea" className="vanillaMilkTea"/>
         <div className="special2">
           <h1 className="special2Header">
-            Lorem Ipsum
+            Vanilla Pudding
           </h1>
-          <div className="special2Body">
-            Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 
-          </div>
+          <Typography className="special2Body">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit earum nam at accusantium eaque error blanditiis iste vel voluptatum? Totam exercitationem tempora culpa eos earum, beatae adipisci sunt minus eaque!
+          </Typography>
         </div>
       </div>
 

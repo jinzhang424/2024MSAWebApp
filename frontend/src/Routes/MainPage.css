@@ -52,17 +52,22 @@
 
 .special1 {
   padding: 10px;
+  margin-right: 25rem;
+
   grid-row: 2 / 3;
   grid-column: 2 / 3;
+}
 
-  margin-right: 20fr;
+.special1Header {
+  text-decoration: underline;
+  text-underline-offset: 5px;
 }
 
 .greenTeaLatte {
   max-width: 500px;
   
   padding: 1rem;
-  margin-left: 30px;
+  margin-left: 6rem;
 
   display: flex;
   object-fit: cover;
@@ -77,6 +82,11 @@
 
   grid-row: 3 / 4;
   grid-column: 1 / 2;
+}
+
+.special2Header {
+  text-decoration: underline;
+  text-underline-offset: 5px;
 }
 
 .vanillaMilkTea {
