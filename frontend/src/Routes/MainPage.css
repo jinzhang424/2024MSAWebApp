@@ -108,12 +108,14 @@
 
   padding: 10px;
 
+  margin-top: 50px;
+
   grid-row: 4 / 5;
   grid-column: 1 / 2;
 
   display: grid;
   grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.5fr 1fr;
   background-color: white;
 }
 
@@ -126,6 +128,7 @@
 .newsPanel2 {
   padding: 10px;
   grid-row: 1 / 2;
+  object-fit: cover;
 }
 
 .newsPanel3 {

@@ -1,0 +1,13 @@
+.PortraitNewsPanelContainer {
+    object-fit: fill;
+    overflow: hidden;
+
+    display: grid;
+    grid-template-rows: 1fr 0.5fr;
+    margin-left: 100px;
+}
+
+.PortraitNewsPanelImg {
+    max-width: 500px;
+}
+
