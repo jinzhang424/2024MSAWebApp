@@ -1,4 +1,4 @@
-.PortraitNewsPanelContainer {
+.SpecialsPanelContainer {
     object-fit: fill;
     overflow: hidden;
 
@@ -7,7 +7,7 @@
     margin-left: 100px;
 }
 
-.PortraitNewsPanelImg {
-    max-width: 500px;
+.SpecialsPanelImg {
+    max-width: 300px;
 }
 

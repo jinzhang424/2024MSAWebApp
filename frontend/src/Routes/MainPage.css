@@ -10,26 +10,84 @@
 .layout {
   overflow: hidden;
   display: grid;
-  grid-template-rows: 1fr 0.8fr 0.8fr 0.8fr 0.4fr;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 950px 600px 850px 1300px 400px; /* navBar and imgSlider, Specials, News, Contacts*/
 }
 
 .navBar {
   z-index: 1;
   grid-row: 1 / 2;
   grid-column: 1 / 2;
+  
 }
 
 .imgSlider {
   grid-row: 1 / 2;
   grid-column: 1 / 2;
+  object-fit: cover;
+  margin-top: -220px;
 }
 
 /* Specials */
+
 .specials {
-  color: white;
+
+  color: rgb(208, 175, 114);
+
+  padding: 10px;
+
+  margin-top: 50px;
 
   grid-row: 2 / 4;
+  grid-column: 1 / 2;
+
+  background-color: white;
+
+  display: grid;
+  grid-template-rows: 50px 1000px;
+}
+
+.specialsTitle {
+  grid-row: 1 / 2;
+}
+
+.specialsPanels {
+
+  grid-row: 2 / 3;
+
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 0.5fr 1fr 0.5fr 1fr 0.5fr;
+
+  padding: 10px;
+  object-fit: cover;
+
+  justify-content: center;
+  margin-top: 20px;
+  margin-right: 200px;
+}
+
+.specialsPanel1 {
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+  margin-top: 20px;
+}
+
+.specialsPanel2 {
+  grid-row: 1 / 2;
+  grid-column: 4 / 5;
+  margin-top: 20px;
+}
+
+.specialsPanel3 {
+  grid-row: 1 / 2;
+  grid-column: 6 / 7;
+  margin-top: 20px;
+}
+
+/* News */
+.news {
+  color: white;
+
+  grid-row: 4 / 5;
   grid-column: 1 / 2;
 
   display: grid;
@@ -39,7 +97,7 @@
   background-color: rgb(208, 175, 114);
 }
 
-.specialsTitle {
+.newsTitle {
   padding: 30px;
   margin: 10px;
 
@@ -50,7 +108,7 @@
   text-underline-offset: 5px;
 }
 
-.special1 {
+.news1 {
   padding: 10px;
   margin-right: 25rem;
 
@@ -58,12 +116,12 @@
   grid-column: 2 / 3;
 }
 
-.special1Header {
+.news1Header {
   text-decoration: underline;
   text-underline-offset: 5px;
 }
 
-.greenTeaLatte {
+.greenTeaLatteAd {
   max-width: 500px;
   
   padding: 1rem;
@@ -76,7 +134,7 @@
   grid-column: 1 / 2;
 }
 
-.special2 {
+.news2 {
   padding: 1rem;
   margin-left: 10rem;
 
@@ -84,12 +142,16 @@
   grid-column: 1 / 2;
 }
 
-.special2Header {
+.news2Header {
   text-decoration: underline;
   text-underline-offset: 5px;
 }
 
-.vanillaMilkTea {
+.news2Body {
+  margin-right: 100px;
+}
+
+.bobaAd {
   max-width: 500px;
 
   margin-left: 10rem;
@@ -100,47 +162,11 @@
   grid-column: 2 / 3;
 }
 
-/* News */
-
-.news {
-
-  color: rgb(208, 175, 114);
-
-  padding: 10px;
-
-  margin-top: 50px;
-
-  grid-row: 4 / 5;
-  grid-column: 1 / 2;
-
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 0.5fr 1fr;
-  background-color: white;
-}
-
-.newsPanel1 {
-  padding: 10px;
-  grid-row: 1 / 4;
-  grid-column: 1 / 2;
-}
-
-.newsPanel2 {
-  padding: 10px;
-  grid-row: 1 / 2;
-  object-fit: cover;
-}
-
-.newsPanel3 {
-  padding: 10px;
-  grid-row: 2 / 4;
-}
-
 /* Contacts */
 
 .contacts {
 
-  color: white;
+  color: rgb(208, 175, 114);
 
   margin: 10px;
   display: grid;
@@ -151,7 +177,7 @@
 
   grid-template-rows: 0.3fr;
 
-  background-color: rgb(208, 175, 114);
+  background-color: rgb(255, 255, 255);
 }
 
 .contactUsTitle {
