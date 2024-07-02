@@ -30,7 +30,7 @@ export const ImageSlider = ({ data } : ImageSliderProps) => {
 
     return (
     
-        <div className = "imageSlider">
+        <div className = "sliderContainer">
 
             {data.map((imageItem, index) => {
                 return <img 
@@ -41,11 +41,11 @@ export const ImageSlider = ({ data } : ImageSliderProps) => {
                 />
             })}
 
-            <Fab aria-label="ArrowLeftIcon" onClick={prevSlide} className="arrow leftArrow">
+            <Fab aria-label="ArrowLeftIcon" onClick={prevSlide} className="leftArrow">
                 <ArrowLeftIcon />
             </Fab>
 
-            <Fab aria-label="ArrowRightIcon" onClick={nextSlide} className="arrow rightArrow">
+            <Fab aria-label="ArrowRightIcon" onClick={nextSlide} className="rightArrow">
                 <ArrowRightIcon />
             </Fab>
 

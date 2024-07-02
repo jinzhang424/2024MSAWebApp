@@ -1,4 +1,4 @@
-import NavigationBar from "../components/NavigationBar";
+import NavigationBar from "../components/NavigationBar"
 
 export default function MenuPage() {
     return <>
@@ -6,4 +6,3 @@ export default function MenuPage() {
         This is the menu page
     </>
 }
-  

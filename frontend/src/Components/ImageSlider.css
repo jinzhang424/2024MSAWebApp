@@ -1,18 +1,17 @@
-.imageSlider {
+.sliderContainer {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
     width: 100%;
-    height: 100%;
-    object-fit: fill;
-    overflow: none;
 }
 
 .slideVisible {
-    display: flex;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
+    position: absolute;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -26,20 +25,14 @@
 }
 
 .arrow {
-    position: relative;
+    display: flex;
+    position: absolute;
+    justify-content: center;
     width: 2rem;
     height: 2rem;
     color: white;
     filter: drop-shadow(0px 0px 5px #555);
-    opacity: 50%;
-}
-
-.leftArrow {
-    left: -90%;
-}
-
-.rightArrow {
-    right: 11%;
+    opacity: 0.5;
 }
 
 .indicators {
@@ -49,6 +42,15 @@
     justify-content: center;
     left: 50%;
 }
+
+.leftArrow {
+    left: -41%;
+}
+
+.rightArrow {
+    left: 41%;
+}
+
 
 .indicator {
     background-color: white;
