@@ -1,3 +1,4 @@
+import "./NavigationBar.css";
 import "./ImageSlider.css";
 import { useState } from "react";
 

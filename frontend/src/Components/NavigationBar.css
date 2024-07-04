@@ -15,10 +15,17 @@ body {
     align-items: center;
 }
 
+.logoLink {
+    display: flex;
+    height: 110px;
+    position: relative;
+    align-items: center;
+}
+
 .logo {
-    margin-top: 10%;
-    width: 11vw;
-    margin: 20%;
+    position: relative;
+    width: 18vw;
+    margin: 18%;
     min-width: 110px;
 }
 
@@ -65,9 +72,10 @@ nav a:hover::before {
     }
 
     .linksContainer {
+        position: relative;
         transform: translateX(100%);
         flex-direction: column;
-        background-color: rgb(194, 133, 75);
+        background-color: rgba(194, 133, 75, 1);
         align-items: unset;
         height: 100vh;
         width: 90vw;
@@ -96,22 +104,18 @@ nav a:hover::before {
 
     .openSideBarButton {
         transform: translateX(52vw)
-        
     }
 
     #sideBarActive:checked ~ .linksContainer {
         transform: translateX(0%)
     }
 
-    #sideBarActive:checked ~ .openSideBarButton {
-        display: none;
-    }
-
     #sideBarActive:checked ~ #overlay {
-        opacity: 0;
         height: 100%;
         width: 100%;
         position: fixed;
+        top: 0;
+        left: 0;
     }
 
     .closeSideBarButton {

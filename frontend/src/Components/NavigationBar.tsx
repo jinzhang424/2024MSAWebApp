@@ -9,7 +9,7 @@ const NavigationBar = () => {
 
       <nav className="navBarContainer">
 
-          <a href="/">
+          <a href="/" className="logoLink">
             <img 
               src={imgLogo} 
               alt="Bobuzz logo" 
