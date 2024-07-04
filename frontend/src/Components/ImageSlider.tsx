@@ -41,15 +41,15 @@ export const ImageSlider = ({ data } : ImageSliderProps) => {
                 />
             })}
 
-            <Fab aria-label="ArrowLeftIcon" onClick={prevSlide} className="leftArrow">
+            <Fab aria-label="ArrowLeftIcon" onClick={prevSlide} className="arrow leftArrow">
                 <ArrowLeftIcon />
             </Fab>
 
-            <Fab aria-label="ArrowRightIcon" onClick={nextSlide} className="rightArrow">
+            <Fab aria-label="ArrowRightIcon" onClick={nextSlide} className="arrow rightArrow">
                 <ArrowRightIcon />
             </Fab>
-
-            <span className="indicators">
+            
+            <span className="indicatorContainer">
                 {data.map((_, index) => {
                     return <button 
                         key={index} 
