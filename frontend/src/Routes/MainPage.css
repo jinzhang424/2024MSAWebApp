@@ -7,6 +7,11 @@
     font-family: "Poppins", sans-serif;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .layout {
   overflow: hidden;
   display: flex;

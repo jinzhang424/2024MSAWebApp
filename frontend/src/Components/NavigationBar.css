@@ -1,23 +1,29 @@
-.header {
-    background-color: rgba(106, 79, 49, 0.5);
-    top: 0;
-    left: 0;
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.navBarContainer {
     width: 100vw;
-    padding: 1rem 2rem;
+    padding: 0.5% 1vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 2.25rem;
-
 }
 
 .logo {
-    width: 10rem;
-    position: relative;
+    margin-top: 10%;
+    width: 11vw;
+    margin: 20%;
+    min-width: 110px;
 }
 
-nav a {
-    font-size: 1.2rem;
+.navBarLink {
+    font-size: 1.4vw;
     position: relative;
     color: white;
     font-weight: 500;
@@ -26,7 +32,7 @@ nav a {
     right: 5%;
 }
 
-nav a::before {
+.navBarLink::before {
     content: '';
     position: absolute;
     top: 100%;
@@ -39,4 +45,92 @@ nav a::before {
 
 nav a:hover::before {
     width: 100%;
+}
+
+.openSideBarButton, .closeSideBarButton {
+    display: none;
+}
+
+#sideBarActive {
+    display: none;
+}
+
+
+@media (max-width: 600px) {
+
+    .navBarContainer {
+        height: 100vh;
+        align-items: unset;
+        padding: 0;
+    }
+
+    .linksContainer {
+        transform: translateX(100%);
+        flex-direction: column;
+        background-color: rgb(194, 133, 75);
+        align-items: unset;
+        height: 100vh;
+        width: 90vw;
+        box-shadow: -5px 0 5px rgba(44, 22, 7, 0.25);
+        transition: 0.4s ease-out;
+    }
+
+    .links {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+    }
+
+    .navBarLink {
+        box-sizing: border-box;
+        height: auto;
+        justify-content: flex-start;
+        padding: 20px 30px;
+    }
+    
+    .openSideBarButton, .closeSideBarButton {
+        display: block;
+    }
+
+    .openSideBarButton {
+        transform: translateX(52vw)
+        
+    }
+
+    #sideBarActive:checked ~ .linksContainer {
+        transform: translateX(0%)
+    }
+
+    #sideBarActive:checked ~ .openSideBarButton {
+        display: none;
+    }
+
+    #sideBarActive:checked ~ #overlay {
+        opacity: 0;
+        height: 100%;
+        width: 100%;
+        position: fixed;
+    }
+
+    .closeSideBarButton {
+        padding: 20px;
+    }
+
+    .openSideBarButton {
+        padding: 2vw;
+        margin-top: 3vw;
+    }
+
+    .logo {
+        margin: 2vw;
+    }
+}
+
+@media (max-width: 950px) {
+    
+    .navBarLink {
+        font-size: 16px;
+    }
 }
