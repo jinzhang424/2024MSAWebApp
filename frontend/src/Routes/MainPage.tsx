@@ -1,5 +1,7 @@
 import './MainPage.css';
 
+import React, { useState, useEffect } from "react";
+
 import NavigationBar from "../components/NavigationBar";
 import { SpecialsPanel } from "../components/SpecialsPanel"
 import { ImageSlider } from "../components/ImageSlider";
@@ -18,14 +20,24 @@ let news2Text: string = "Lorem ipsum dolor sit amet consectetur adipisicing elit
 let news3Text: string = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam ex sunt vero fuga, itaque sapiente iusto soluta necessitatibus illum consectetur suscipit incidunt qui odit nemo, quisquam, in quasi dolores nihil?"
 
 export default function Root() {
-  return <>
-  <div className="layout">
 
-      <div className="section1">
-        <div className="navBar"><NavigationBar /></div>
-        <div className="imgSlider"><ImageSlider data={imageSlides}/></div>
-      </div>
+  function isSideBarActiveChecked() {
+    const checkbox = document.getElementById('sideBarActive') as HTMLInputElement;
+    return checkbox ? checkbox.checked : false;
+  }
 
-  </div>
-  </>
-}
+  const navBarStyle = {
+    zIndex: isSideBarActiveChecked() ? 3 : 1,
+  };
+
+  return (
+    <div className="layout">
+
+        <div className="section1">
+          <div className="navBar" style={navBarStyle}><NavigationBar /></div>
+          <div className="imgSlider"><ImageSlider data={imageSlides}/></div>
+        </div>
+
+    </div>
+  );
+};

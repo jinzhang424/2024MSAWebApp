@@ -17,15 +17,20 @@ body {
 
 .logoLink {
     display: flex;
-    height: 110px;
+    height: 70px;
     position: relative;
     align-items: center;
+    margin-top: 1vw;
+}
+
+.linksContainer {
+    margin-top: 2rem;
 }
 
 .logo {
     position: relative;
-    width: 18vw;
-    margin: 18%;
+    width: 12vw;
+    margin-left: 3rem;
     min-width: 110px;
 }
 
@@ -72,10 +77,11 @@ nav a:hover::before {
     }
 
     .linksContainer {
+        margin-top: unset;
         position: relative;
         transform: translateX(100%);
         flex-direction: column;
-        background-color: rgba(194, 133, 75, 1);
+        background-color: rgba(194, 133, 75);
         align-items: unset;
         height: 100vh;
         width: 90vw;
@@ -103,6 +109,8 @@ nav a:hover::before {
     }
 
     .openSideBarButton {
+        height: 70px;
+        margin-top: 1vw;
         transform: translateX(52vw)
     }
 

@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react"; 
 import './NavigationBar.css';
 import imgLogo from "../data/images/logo.svg";
 
@@ -5,8 +6,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 
 const NavigationBar = () => {
-  return (
 
+  return (
       <nav className="navBarContainer">
 
           <a href="/" className="logoLink">
