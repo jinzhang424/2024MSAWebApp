@@ -21,6 +21,22 @@ let news3Text: string = "Lorem ipsum dolor sit amet consectetur adipisicing elit
 
 export default function Root() {
 
+  const [isSideBarActive, setIsSideBarActive] = useState(false);
+
+  useEffect(() => {
+    const checkSideBarActive = () => {
+      setIsSideBarActive(isSideBarActiveChecked());
+    };
+
+    checkSideBarActive();
+
+    document.getElementById('sideBarActive')?.addEventListener('change', checkSideBarActive);
+
+    return () => {
+      document.getElementById('sideBarActive')?.removeEventListener('change', checkSideBarActive);
+    };
+  }, []);
+
   function isSideBarActiveChecked() {
     const checkbox = document.getElementById('sideBarActive') as HTMLInputElement;
     return checkbox ? checkbox.checked : false;
