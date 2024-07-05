@@ -22,6 +22,7 @@ let news3Text: string = "Lorem ipsum dolor sit amet consectetur adipisicing elit
 export default function Root() {
 
   const [isSideBarActive, setIsSideBarActive] = useState(false);
+  const [navBarZIndex, setNavBarZIndex] = useState(1);
 
   useEffect(() => {
     const checkSideBarActive = () => {
@@ -37,13 +38,23 @@ export default function Root() {
     };
   }, []);
 
+  useEffect(() => {
+    if (isSideBarActive) {
+      setNavBarZIndex(3);
+    } else {
+      setTimeout(() => {
+        setNavBarZIndex(1);
+      }, 310); 
+    }
+  }, [isSideBarActive]);
+
   function isSideBarActiveChecked() {
     const checkbox = document.getElementById('sideBarActive') as HTMLInputElement;
     return checkbox ? checkbox.checked : false;
   }
 
   const navBarStyle = {
-    zIndex: isSideBarActiveChecked() ? 3 : 1,
+    zIndex: navBarZIndex,
   };
 
   return (

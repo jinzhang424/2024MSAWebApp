@@ -42,11 +42,11 @@ export const ImageSlider = ({ data } : ImageSliderProps) => {
                 />
             })}
 
-            <Fab aria-label="ArrowLeftIcon" onClick={prevSlide} className="arrow leftArrow">
+            <Fab aria-label="ArrowLeftIcon" onClick={prevSlide} style={{zIndex: 2}} className="arrow leftArrow">
                 <ArrowLeftIcon />
             </Fab>
 
-            <Fab aria-label="ArrowRightIcon" onClick={nextSlide} className="arrow rightArrow">
+            <Fab aria-label="ArrowRightIcon" onClick={nextSlide} style={{zIndex: 2}} className="arrow rightArrow">
                 <ArrowRightIcon />
             </Fab>
             
