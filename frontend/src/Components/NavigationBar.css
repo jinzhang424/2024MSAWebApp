@@ -71,7 +71,7 @@ nav a:hover::before {
 @media (max-width: 600px) {
 
     .navBarContainer {
-        height: 100vh;
+        height: 100v;
         align-items: unset;
         padding: 0;
     }

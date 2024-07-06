@@ -24,7 +24,6 @@ body {
   display: grid;
   width: 100vw;
   justify-content: center;
-
 }
 
 .navBar {
@@ -146,5 +145,11 @@ body {
 @media (max-width: 900px) {
   .specialsSection {
     grid-template-rows: 9vw 90vw 90vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .section1 {
+    height: 100vh;
   }
 }
