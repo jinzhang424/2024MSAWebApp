@@ -155,13 +155,27 @@ export default function Root() {
 
           <div className="newsPanels">
             <div className="panel newsPanel1">
-              <NewsPanel imageUrl={bobaAd} imageAlt="boba ad" imageTitle="New discount" text={news3Text}></NewsPanel>
+              <NewsPanel 
+                imageUrl={bobaAd} 
+                imageAlt="boba ad" 
+                imageTitle="New discount" 
+                text={news3Text}>
+              </NewsPanel>
             </div>
             <div className="panel newsPanel2">
-              <NewsPanel imageUrl={upcomingMilkshakes} imageAlt="milk shakes" imageTitle="New Milk Shakes" text={news2Text}></NewsPanel>
+              <NewsPanel 
+                imageUrl={upcomingMilkshakes} 
+                imageAlt="milk shakes" 
+                imageTitle="New Milk Shakes" 
+                text={news2Text}>
+              </NewsPanel>
             </div>
             <div className="panel newsPanel3">
-              <NewsPanel imageUrl={upcomingMacarons} imageAlt="macarons" imageTitle="New Macarons" text={news3Text}></NewsPanel>
+              <NewsPanel 
+                imageUrl={upcomingMacarons} 
+                imageAlt="macarons" imageTitle="New Macarons" 
+                text={news3Text}>
+              </NewsPanel>
             </div>
           </div>
         </div>

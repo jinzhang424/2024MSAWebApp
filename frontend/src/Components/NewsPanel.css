@@ -2,7 +2,7 @@
     overflow: hidden;
 
     display: grid;
-    grid-template-rows: 75% 25%;
+    grid-template-rows: 70% 30%;
     height: 100%;
     width: 100%;
     max-width: 420px;
@@ -22,3 +22,6 @@
     object-fit: cover;
 }
 
+.NewsPanelText {
+    color: white;
+}
