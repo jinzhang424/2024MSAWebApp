@@ -23,6 +23,7 @@ body {
 .section1 {
   display: grid;
   width: 100vw;
+  aspect-ratio: 16 / 9;
   justify-content: center;
 }
 
@@ -140,6 +141,29 @@ body {
 .special2Title {
   text-decoration: underline;
   text-underline-offset: 3%;
+}
+
+/* News Section */
+
+.newsSection {
+  display: grid;
+  grid-template-rows: 13vw 90vh;
+  padding: 2vw 2vw 2vw 2vw;
+  width: 100%;
+}
+
+.newsHeader {
+
+  text-decoration: underline;
+  text-underline-offset: 2%;
+  color: rgb(231, 181, 106);
+
+  grid-row: 1 / 2;
+}
+
+.newsPanels {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 @media (max-width: 900px) {

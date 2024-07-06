@@ -138,7 +138,7 @@ export default function Root() {
                   {special2Title}
                 </Typography>
                 <Typography variant="body1" className="special2Body">
-                  {special1Text}
+                  {special2Text}
                 </Typography>
               </ThemeProvider>
             </div>
@@ -146,8 +146,24 @@ export default function Root() {
           </div>
         </div>
 
-        <div>
-          news
+        <div className="newsSection">
+          <ThemeProvider theme={theme}>
+            <Typography variant="h2" className="newsHeader">
+              News
+            </Typography>
+          </ThemeProvider>
+
+          <div className="newsPanels">
+            <div className="newsPanel1">
+              <NewsPanel imageUrl={bobaAd} imageAlt="boba ad" imageTitle="New discount" text={news3Text}></NewsPanel>
+            </div>
+            <div className="newsPanel1">
+              <NewsPanel imageUrl={upcomingMacarons} imageAlt="macarons" imageTitle="Macarons Coming Soon" text={news1Text}></NewsPanel>
+            </div>
+            <div className="newsPanel1">
+              <NewsPanel imageUrl={upcomingMilkshakes} imageAlt="milk shakes" imageTitle="New Milk Shakes" text={news2Text}></NewsPanel>
+            </div>
+          </div>
         </div>
 
         <div>
