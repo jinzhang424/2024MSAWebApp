@@ -14,7 +14,9 @@ interface NewsPanelProps {
     return (
         <div className="NewsPanelContainer">
 
-            <img src={imageUrl} alt={imageAlt} className="NewsPanelImg"/>
+            <div className="imgContainer">
+                <img src={imageUrl} alt={imageAlt} className="NewsPanelImg"/>
+            </div>
 
             <div className="NewsPanelText">
                 <h1 className="NewsPanelHeader">

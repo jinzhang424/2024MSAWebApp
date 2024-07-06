@@ -146,10 +146,11 @@ body {
 /* News Section */
 
 .newsSection {
-  display: grid;
-  grid-template-rows: 13vw 90vh;
+  display: flex;
+  flex-direction: column;
   padding: 2vw 2vw 2vw 2vw;
   width: 100%;
+  height: auto;
 }
 
 .newsHeader {
@@ -164,6 +165,30 @@ body {
 .newsPanels {
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
+  height: auto;
+  padding: 1vw 1vw;
+}
+
+.newsPanel1 {
+  height: auto;
+  padding: 0.5vw 0.5vw;
+  background-color: rgb(231, 181, 106);
+  box-shadow: 3px 3px 10px 5px rgba(0, 0, 0, 0.3);
+}
+
+.newsPanel2 {
+  height: auto;
+  padding: 0.5vw 0.5vw;
+  background-color: rgb(231, 181, 106);
+  box-shadow: 3px 3px 10px 5px rgba(0, 0, 0, 0.3);
+}
+
+.newsPanel3 {
+  height: auto;
+  padding: 0.5vw 0.5vw;
+  background-color: rgb(231, 181, 106);
+  box-shadow: 3px 3px 10px 5px rgba(0, 0, 0, 0.3);
 }
 
 @media (max-width: 900px) {
@@ -175,5 +200,16 @@ body {
 @media (max-width: 600px) {
   .section1 {
     height: 100vh;
+  }
+}
+
+@media (max-width: 840px) {
+  .newsPanels {
+    flex-direction: column;
+  }
+
+  .panel {
+    display: flex;
+    justify-content: center;
   }
 }
