@@ -139,10 +139,3 @@ nav a:hover::before {
         margin: 2vw;
     }
 }
-
-@media (max-width: 950px) {
-    
-    .navBarLink {
-        font-size: 16px;
-    }
-}

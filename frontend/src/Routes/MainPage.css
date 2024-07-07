@@ -96,7 +96,7 @@ body {
   grid-column: 2 / 3;
   grid-row: 1 / 2;
   padding: 3vw 3vw;
-  color: rgb(232, 232, 232);
+  color: white;
 }
 
 .special2Container {
@@ -132,7 +132,7 @@ body {
 }
 
 .special2TextContainer {
-  color: rgb(232, 232, 232);
+  color: white;
   grid-column: 1 / 2;
   grid-row: 1 / 2;
   padding: 3vw 3vw;
@@ -175,6 +175,12 @@ body {
   min-height: 100vh;
   background-color: rgb(231, 181, 106);
   box-shadow: 3px 3px 10px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Contacts Section*/
+.contactsSection {
+  width: 100vw;
+  height: 50vh;
 }
 
 @media (max-width: 900px) {

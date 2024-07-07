@@ -3,11 +3,12 @@ import './MainPage.css';
 import { useState, useEffect } from "react";
 
 import NavigationBar from "../components/NavigationBar";
+import ContactsSection from "../components/ContactsSection"
 import { NewsPanel } from "../components/NewsPanel"
 import { ImageSlider } from "../components/ImageSlider";
 import { imageSlides } from "../data/imageSlides.json";
 import Typography from '@mui/material/Typography';
-import { ThemeProvider, createTheme, responsiveFontSizes } from '@mui/material/styles';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 import greenTeaLatte from "../data/specialsImages/greenTea-latte.jpg";
 import chocolateOreoMilkTea from "../data/specialsImages/chocolateOreaMilkTea.jpg";
@@ -44,6 +45,7 @@ export default function Root() {
     };
   }, []);
 
+  // Creating a delay for the change in z-index for the size bar
   useEffect(() => {
     if (isSideBarActive) {
       setNavBarZIndex(3);
@@ -62,6 +64,8 @@ export default function Root() {
   const navBarStyle = {
     zIndex: navBarZIndex,
   };
+
+  // Typography themes for MUI
 
   const theme = createTheme();
 
@@ -159,7 +163,7 @@ export default function Root() {
                 imageUrl={bobaAd} 
                 imageAlt="boba ad" 
                 imageTitle="New discount" 
-                text={news3Text}>
+                text={news1Text}>
               </NewsPanel>
             </div>
             <div className="panel newsPanel2">
@@ -180,8 +184,8 @@ export default function Root() {
           </div>
         </div>
 
-        <div>
-          contacts
+        <div className="contactsSection">
+          <ContactsSection />
         </div>
     </div>
   );
