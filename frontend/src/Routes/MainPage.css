@@ -195,7 +195,7 @@ body {
   }
 }
 
-@media (max-width: 840px) {
+@media (max-width: 950px) {
 
   .newsSection {
     height: 360vh;
