@@ -97,6 +97,15 @@ body {
   grid-row: 1 / 2;
   padding: 3vw 3vw;
   color: white;
+
+  position: relative;
+}
+
+.orderButton1Container {
+  position: absolute;
+
+  bottom: 0px;
+  right: 0px;
 }
 
 .special2Container {
@@ -132,15 +141,25 @@ body {
 }
 
 .special2TextContainer {
+  flex-direction: column;
   color: white;
   grid-column: 1 / 2;
   grid-row: 1 / 2;
   padding: 3vw 3vw;
+
+  position: relative;
 }
 
 .special2Title {
   text-decoration: underline;
   text-underline-offset: 3%;
+}
+
+.orderButton2Container {
+  position: absolute;
+
+  bottom: 0px;
+  left: 0px;
 }
 
 /* News Section */
@@ -183,18 +202,33 @@ body {
   height: 50vh;
 }
 
-@media (max-width: 900px) {
+/* Adjusting specials height*/
+@media (max-width: 840px) {
   .specialsSection {
-    grid-template-rows: 9vw 90vw 90vw;
+    grid-template-rows: 9vw 65vw 65vw;
   }
 }
 
+@media (max-width: 700px) {
+  .specialsSection {
+    grid-template-rows: 9vw 85vw 85vw;
+  }
+}
+
+@media (max-width: 530px) {
+  .specialsSection {
+    grid-template-rows: 9vw 110vw 110vw;
+  }
+}
+
+/* Adjusting section1 height */
 @media (max-width: 600px) {
   .section1 {
     height: 100vh;
   }
 }
 
+/* Adjusting news section height */
 @media (max-width: 950px) {
 
   .newsSection {

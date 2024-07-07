@@ -9,6 +9,7 @@ import { ImageSlider } from "../components/ImageSlider";
 import { imageSlides } from "../data/imageSlides.json";
 import Typography from '@mui/material/Typography';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import Fab from '@mui/material/Fab';
 
 import greenTeaLatte from "../data/specialsImages/greenTea-latte.jpg";
 import chocolateOreoMilkTea from "../data/specialsImages/chocolateOreaMilkTea.jpg";
@@ -105,6 +106,10 @@ export default function Root() {
     },
   }
 
+  theme.typography.body2 = {
+    fontWeight: '550s',
+  }
+
   return (
     <div className="layout">
 
@@ -131,7 +136,20 @@ export default function Root() {
                   {special1Text}
                 </Typography>
               </ThemeProvider>
+
+              <div className="orderButton1Container">
+                <a href="tbd">
+                  <Fab variant="extended" style={{ width: '130px' }}>
+                      <ThemeProvider theme={theme}>
+                        <Typography variant="body2">
+                          Order Now
+                        </Typography>
+                      </ThemeProvider>
+                    </Fab>
+                </a>
+              </div>
             </div>
+
             <img src={greenTeaLatte} alt="green tea latte special" className="special1Img" />
           </div>
 
@@ -145,7 +163,20 @@ export default function Root() {
                   {special2Text}
                 </Typography>
               </ThemeProvider>
+
+              <div className ="orderButton2Container">
+                <a href="tbd">
+                  <Fab variant="extended" style={{ width: '130px' }}>
+                    <ThemeProvider theme={theme}>
+                      <Typography variant="body2">
+                        Order Now
+                      </Typography>
+                    </ThemeProvider>
+                  </Fab>
+                </a>
+              </div>
             </div>
+
             <img src={chocolateOreoMilkTea} alt="chocolate milk tea speical" className="special2Img" />
           </div>
         </div>
