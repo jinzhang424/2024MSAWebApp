@@ -24,7 +24,15 @@ body {
 }
 
 .linksContainer {
+    display: flex;
+    align-items: center;
     margin-top: 2rem;
+    margin-right: 2vw;
+}
+
+.links {
+    display: flex;
+    align-items: center;
 }
 
 .logo {
@@ -35,7 +43,7 @@ body {
 }
 
 .navBarLink {
-    font-size: 1.4vw;
+    font-size: 1.5vw;
     position: relative;
     color: white;
     font-weight: 500;
@@ -50,7 +58,7 @@ body {
     top: 100%;
     left: 0;
     width: 0;
-    height: 2px;
+    height: 3px;
     background-color: rgb(255, 255, 255);
     transition: 0.3s;
 }
@@ -87,9 +95,11 @@ nav a:hover::before {
         width: 90vw;
         box-shadow: -5px 0 5px rgba(44, 22, 7, 0.25);
         transition: 0.4s ease-out;
+        margin-right: unset;
     }
 
     .links {
+        all: unset;
         height: 100%;
         width: 100%;
         display: flex;
@@ -98,6 +108,7 @@ nav a:hover::before {
     }
 
     .navBarLink {
+        font-size: 4vw;
         box-sizing: border-box;
         height: auto;
         justify-content: flex-start;

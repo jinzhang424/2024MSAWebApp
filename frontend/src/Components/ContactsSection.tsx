@@ -49,9 +49,6 @@ export default function ContactsSection() {
                     <a href="order/" className="pageLink">Order</a>
                 </nav>
                 <nav>
-                    <a href="/menu" className="pageLink">Menu</a>
-                </nav>
-                <nav>
                     <a href="/about-us" className="pageLink">About Us</a>
                 </nav>
             </div>

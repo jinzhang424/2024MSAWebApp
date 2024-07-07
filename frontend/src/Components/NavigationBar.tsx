@@ -34,7 +34,6 @@ const NavigationBar = () => {
           <nav className="links">
             <a href="/" className="navBarLink">Home</a>
             <a href="/about-us" className="navBarLink">About Us</a>
-            <a href="/menu" className="navBarLink">Menu</a>
             <a href="order/" className="navBarLink">Order</a>
           </nav>
         </div>
