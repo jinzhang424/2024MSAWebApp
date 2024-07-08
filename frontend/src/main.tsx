@@ -5,6 +5,7 @@ import './index.css'
 import OrderPage from "./Routes/OrderPage.tsx";
 import AboutUsPage from "./Routes/AboutUsPage.tsx";
 import Home from "./Routes/MainPage.tsx";
+import Test from "./Routes/test.tsx"
 
 const router = createBrowserRouter([
 
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
   {
     path: "/about-us",
     element: <AboutUsPage  />,
+  },
+  {
+    path: "/test",
+    element: <Test  />,
   },
 
 ]);
