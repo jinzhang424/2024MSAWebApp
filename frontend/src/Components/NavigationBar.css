@@ -13,6 +13,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 1.5vw;
 }
 
 .logoLink {
@@ -26,8 +27,8 @@ body {
 .linksContainer {
     display: flex;
     align-items: center;
-    margin-top: 2rem;
     margin-right: 2vw;
+    margin-top: 1vw;
 }
 
 .links {
@@ -68,7 +69,7 @@ nav a:hover::before {
 }
 
 .openSideBarButton, .closeSideBarButton {
-    display: none;
+   display: none;
 }
 
 #sideBarActive {

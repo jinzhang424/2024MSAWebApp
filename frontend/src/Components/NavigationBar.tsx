@@ -10,7 +10,7 @@ const NavigationBar = () => {
   return (
       <nav className="navBarContainer">
 
-          <a href="/" className="logoLink">
+          <a href="/" className="orderPageLogoLink">
             <img 
               src={imgLogo} 
               alt="Bobuzz logo" 
