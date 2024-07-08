@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.aboutUsPageLayout {
+    display: flex;
+    width: 100vw;
+}
+
+.aboutUsSection1 {
+    aspect-ratio: 16 / 7;
+    width: 100%;
+
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)), url("https://images.unsplash.com/photo-1617181669346-e41bb86eebfd?q=80&w=2019&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-size: cover;
+    background-position: center;
+}
+
+.aboutUsPageNavBar {
+    overflow: hidden;
+}
+
+/* Images and Info section*/
+
+.aboutUsSection2 {
+    display: grid;
+    grid-template-rows: 50vw 50vw 50vw;
+    padding: 2vw 0vw 2vw 0vw;
+    width: 100%;
+}
+
+.imgOnLeftAboutUsContainer {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100%;
+  
+    height: 100%;
+    width: 100%;
+  
+    padding: 5vw 4vw;
+    padding-left: 7vw;
+  
+    grid-row: 1 / 2;
+}
+
+.imgOnLeftAboutUsImg {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    padding: 3vw 3vw;
+    background-color: white;
+    box-shadow: 2px 2px 10px 5px rgba(0, 0, 0, 0.2);
+    transform: rotate(-2deg);
+}
+
+.imgOnLeftAboutUsTitle {
+    text-decoration: underline;
+    text-underline-offset: 3%;
+    padding-left: 3vw;
+}
+
+.imgOnLeftAboutUsTextContainer {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    padding: 3vw 3vw;
+    color: rgb(231, 181, 106);
+
+    position: relative;
+}
+
+/* About Us 2 Container */
+
+.aboutUs2Container {
+    display: grid;
+    height: 100%;
+    width: 100;
+
+    grid-row: 2 / 3;
+
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100%;
+
+    padding: 5vw 5vw;
+    padding-right: 7vw;
+
+    background-color: rgb(231, 181, 106);
+}
+
+.aboutUs2Img {
+    box-sizing: border-box;
+    object-fit: cover;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+
+    background-color: white;
+    box-shadow: 2px 2px 10px 5px rgba(0, 0, 0, 0.2);
+    transform: rotate(2deg);
+
+    padding: 3vw 3vw;
+}
+
+.aboutUs2TextContainer {
+    flex-direction: column;
+    color: white;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    padding: 3vw 3vw;
+
+    position: relative;
+    }
+
+.aboutUs2Title {
+    text-decoration: underline;
+    text-underline-offset: 3%;
+}
+
+.aboutUs3Container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100%;
+  
+    height: 100%;
+    width: 100%;
+  
+    padding: 5vw 4vw;
+    padding-left: 7vw;
+  
+    grid-row: 3 / 4;
+}
+
+/* Adjusting specials height*/
+@media (max-width: 840px) {
+    .aboutUsSection2 {
+        grid-template-rows: 65vw 65vw 65vw;
+    }
+}
+  
+@media (max-width: 700px) {
+    .aboutUsSection2 {
+        grid-template-rows: 85vw 85vw 85vw;
+    }
+}
+  
+@media (max-width: 530px) {
+    .aboutUsSection2 {
+        grid-template-rows: 117vw 117vw 117vw;
+    }
+}
+
+@media (max-width: 375px) {
+    .aboutUsSection2 {
+        grid-template-rows: 125vw 125vw 125vw;
+    }
+}
+
+/* Contacts Section*/
+.aboutUsContactsSection {
+    width: 100vw;
+    height: 50vh;
+    overflow: hidden;
+}
