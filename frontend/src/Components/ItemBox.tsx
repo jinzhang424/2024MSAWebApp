@@ -1,15 +1,15 @@
 import "./ItemBox.css";
-import { Typography } from "@mui/material";
+import Typography from '@mui/material/Typography';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
-interface ItemBoxInfo {
+export interface ItemBoxInfo {
     name : string;
     price : number;
     imgUrl : string;
     imgAlt : string;
 }
 
-interface ItemBoxProps {
+export interface ItemBoxProps {
     items : ItemBoxInfo[];
 }
 
@@ -31,7 +31,7 @@ export default function ItemBox( { items } : ItemBoxProps ) {
         <div className="itemBoxContainer">
             {items.map((item, index) => {
                 return (
-                    <div className="item">
+                    <div key={index} className="item">
                         <img src={item.imgUrl} alt={item.imgAlt} className="itemImg"/>
                         <ThemeProvider theme={theme}>
                             <Typography variant="h5">
