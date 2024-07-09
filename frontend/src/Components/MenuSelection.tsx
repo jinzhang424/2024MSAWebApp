@@ -4,8 +4,6 @@ import { ItemBoxProps } from "./ItemBox";
 import Typography from "@mui/material/Typography";
 import {ThemeProvider, createTheme} from "@mui/material/styles";
 import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import ListSubheader from '@mui/material/ListSubheader';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { useState } from "react"

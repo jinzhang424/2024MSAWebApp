@@ -10,8 +10,9 @@
 }
 
 .ItemBoxesContainer {
-    height: 500px;
+    height: 600px;
     overflow-y: auto;
+    padding: 2vw 2vw 2vw 2vw;
 }
 
 .Hidden {
@@ -25,5 +26,5 @@
 }
 
 .menuHeader {
-    padding-left: 2vw;
+    padding-left: 15px;
 }
