@@ -8,6 +8,7 @@ import MenuItem from '@mui/material/MenuItem';
 import ListSubheader from '@mui/material/ListSubheader';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import { useState } from "react"
 
 interface MenuSelectionProps {
     ItemBoxPropsArray: ItemBoxProps[];
@@ -15,6 +16,12 @@ interface MenuSelectionProps {
 }
 
 export default function MenuSelection({ ItemBoxPropsArray, ItemBoxCategoryNames}: MenuSelectionProps) {
+
+    const [selectedValue, setSelectedValue] = useState(0);
+
+    const handleChange = (event) => {
+        setSelectedValue(event.target.value);
+    };
 
     const theme = createTheme();
 
@@ -29,32 +36,45 @@ export default function MenuSelection({ ItemBoxPropsArray, ItemBoxCategoryNames}
         [theme.breakpoints.up('md')]: {
           fontSize: '3rem',
         },
-      };
+    };
+
+    theme.typography.h5 = {
+        fontSize: '1.4rem',
+        '@media (max-width:600px)': {
+          fontSize: '1.2rem',
+        },
+    }
 
     return (
         <div className="MenuSelectionContainer">
 
-            <ThemeProvider theme={theme}>
-                <Typography variant="h3">Menu</Typography>
-            </ThemeProvider>
+            <div className="selectorContainer">
+                <ThemeProvider theme={theme}>
+                    <Typography variant="h3">Menu</Typography>
+                </ThemeProvider>
 
-            <FormControl sx={{ m: 1, minWidth: 140 }}>
-                <InputLabel htmlFor="grouped-native-select">Filter</InputLabel>
-                <Select native defaultValue="" id="grouped-native-select" label="Grouping">
-                    <option aria-label="None" value="" />
-                    <optgroup label="Teas">
-                        <option value={1}>Milk Tea</option>
-                    </optgroup>
-                    <optgroup label="Desserts">
-                        <option value={2}>Milk Shakes</option>
-                    </optgroup>
-                </Select>
-            </FormControl>
+                <FormControl sx={{ m: 1, minWidth: 140 }}>
+                    <InputLabel htmlFor="grouped-native-select">Filter</InputLabel>
+                    <Select native defaultValue="" id="grouped-native-select" label="Grouping" onChange={handleChange}>
+                        <option aria-label="None" value={-1} />
+                        <optgroup label="Teas">
+                            <option value={0}>Milk Tea</option>
+                        </optgroup>
+                        <optgroup label="Desserts">
+                            <option value={1}>Milk Shakes</option>
+                        </optgroup>
+                    </Select>
+                </FormControl>
+            </div>
 
             <div className="ItemBoxesContainer">
                 {ItemBoxPropsArray.map((data, index) => (
-                    <div key={index} className="ItemBoxes">
-                        <h3>{ItemBoxCategoryNames[index]}</h3>
+                    <div key={index} className={ selectedValue == index || selectedValue == -1 ? "ItemBoxes" : "Hidden ItemBoxes"}>
+                        <ThemeProvider theme={theme}>
+                            <Typography variant="h5" className="menuHeader">
+                                {ItemBoxCategoryNames[index]}
+                            </Typography>
+                        </ThemeProvider>
                         <ItemBox items={data.items} />
                     </div>
                 ))}

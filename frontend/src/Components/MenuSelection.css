@@ -13,3 +13,17 @@
     height: 500px;
     overflow-y: auto;
 }
+
+.Hidden {
+    display: none;
+}
+
+.selectorContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 2vw 2vw 2vw 2vw;
+}
+
+.menuHeader {
+    padding-left: 2vw;
+}
