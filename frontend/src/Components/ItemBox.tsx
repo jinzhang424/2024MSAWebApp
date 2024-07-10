@@ -70,7 +70,7 @@ export default function ItemBox( { items } : ItemBoxProps ) {
                 )
             })}
 
-            <Dialog disableEscapeKeyDown open={open} onClose={handleClose} >
+            <Dialog disableEscapeKeyDown open={open} onClose={handleClose} className="orderDialogContainer">
                 <DialogTitle>Fill the form</DialogTitle>
                     <DialogContent className="orderDialogContent">
                         <div className="sweetnessSlider">
