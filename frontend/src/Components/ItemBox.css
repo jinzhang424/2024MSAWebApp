@@ -31,11 +31,30 @@
 
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
+    outline: 3px solid rgb(231, 181, 106, 0);
+    transition: outline-color 0.3s ease;
+}
+
+.item:hover {
+    outline: 3px solid rgba(231, 181, 106, 1);
+    cursor: pointer;
 }
 
 .itemImg {
     width: 80%;
     height: 80%;
     object-fit: cover;
+}
 
+/* Dialogue */
+
+.MuiDialogContent-root {
+    height: 55vh;
+}
+
+.orderDialogContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
