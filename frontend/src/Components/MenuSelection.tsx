@@ -15,7 +15,7 @@ interface MenuSelectionProps {
 
 export default function MenuSelection({ ItemBoxPropsArray, ItemBoxCategoryNames}: MenuSelectionProps) {
 
-    const [selectedValue, setSelectedValue] = useState(0);
+    const [selectedValue, setSelectedValue] = useState(-1);
 
     const handleChange = (event) => {
         setSelectedValue(event.target.value);
