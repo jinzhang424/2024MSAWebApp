@@ -1,5 +1,6 @@
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
+import { useState } from "react";
 
 const marks = [
     {
@@ -25,15 +26,22 @@ const marks = [
   ];
 
 function valuetext(value: number) {
-  return `${value}°C`;
+  return `${value}`;
 }
 
-export default function DiscreteSlider() {
+interface DiscreteSliderProps {
+  value: number;
+  onChange: (event: Event, newValue: number | number[]) => void;
+}
+
+export default function DiscreteSlider({ value, onChange }: DiscreteSliderProps) {
+
   return (
     <Box sx={{ width: 267 }}>
       <Slider
-        aria-label="Temperature"
-        defaultValue={3}
+        aria-label="Value"
+        value={value}
+        onChange={onChange}
         getAriaValueText={valuetext}
         valueLabelDisplay="auto"
         step={1}

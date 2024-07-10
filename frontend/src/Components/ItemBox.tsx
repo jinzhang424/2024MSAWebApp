@@ -2,9 +2,7 @@ import "./ItemBox.css";
 import Typography from '@mui/material/Typography';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import * as React from 'react';
-import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
 import OrderDialog from "./OrderDialog";
 import { useState } from "react";
 
@@ -36,6 +34,14 @@ export default function ItemBox( { items } : ItemBoxProps ) {
         }
     };
 
+    const handleOk = () => {
+        console.log("Ok button pressed");
+        setOpen(false);
+    };
+
+    const handleCancel = () => {
+        setOpen(false);
+    };
 
     const theme = createTheme();
 
@@ -68,11 +74,7 @@ export default function ItemBox( { items } : ItemBoxProps ) {
             })}
 
             <Dialog disableEscapeKeyDown open={open} onClose={handleClose} className="orderDialogContainer">
-                <OrderDialog itemName={selectedItemName}/>
-                <DialogActions>
-                    <Button onClick={handleClose}>Cancel</Button>
-                    <Button onClick={handleClose}>Ok</Button>
-                </DialogActions>
+                <OrderDialog itemName={selectedItemName} onOk={handleOk} onCancel={handleCancel} />
             </Dialog>
         </div>
     )

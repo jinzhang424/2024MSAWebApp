@@ -23,18 +23,12 @@ const names = [
   'Pudding',
 ];
 
-export default function MultipleSelectCheckmarks() {
-  const [topping, setTopping] = React.useState<string[]>([]);
+interface MultipleSelectCheckmarksProps {
+  toppings: string[];
+  onToppingsChange: (event: SelectChangeEvent<string[]>) => void;
+}
 
-  const handleChange = (event: SelectChangeEvent<typeof topping>) => {
-    const {
-      target: { value },
-    } = event;
-    setTopping(
-      // On autofill we get a stringified value.
-      typeof value === 'string' ? value.split(',') : value,
-    );
-  };
+export default function MultipleSelectCheckmarks({toppings, onToppingsChange}: MultipleSelectCheckmarksProps) {
 
   return (
     <div>
@@ -44,15 +38,15 @@ export default function MultipleSelectCheckmarks() {
           labelId="demo-multiple-checkbox-label"
           id="demo-multiple-checkbox"
           multiple
-          value={topping}
-          onChange={handleChange}
+          value={toppings}
+          onChange={onToppingsChange}
           input={<OutlinedInput label="Toppings" />}
           renderValue={(selected) => selected.join(', ')}
           MenuProps={MenuProps}
         >
           {names.map((name) => (
             <MenuItem key={name} value={name}>
-              <Checkbox checked={topping.indexOf(name) > -1} />
+              <Checkbox checked={toppings.indexOf(name) > -1} />
               <ListItemText primary={name} />
             </MenuItem>
           ))}
