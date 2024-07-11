@@ -13,12 +13,34 @@ interface MenuSelectionProps {
     ItemBoxCategoryNames : string[];
 }
 
+interface OrderItemsInfo {
+    itemName: string;
+    itemPrice: number;
+    sweetness: number;
+    temperature: number;
+    toppings: string[];
+    hasIce: boolean;
+}
+
 export default function MenuSelection({ ItemBoxPropsArray, ItemBoxCategoryNames}: MenuSelectionProps) {
 
-    const [selectedValue, setSelectedValue] = useState(-1);
+    const [selectedCategory, setSelectedCategory] = useState(-1);
+    const [orderItems, setOrderItems] = useState<OrderItemsInfo[]>([]);
 
-    const handleChange = (event) => {
-        setSelectedValue(event.target.value);
+    const handleChange = (event: any) => {
+        setSelectedCategory(event.target.value);
+    };
+
+    const handleItemBoxOk = (itemName: string, itemPrice: number, sweetness: number, temperature: number, toppings: string[], hasIce: boolean) => {
+        const newItem: OrderItemsInfo = {
+            itemName,
+            itemPrice,
+            sweetness,
+            temperature,
+            toppings,
+            hasIce
+        };
+        setOrderItems([...orderItems, newItem]);
     };
 
     const theme = createTheme();
@@ -67,13 +89,13 @@ export default function MenuSelection({ ItemBoxPropsArray, ItemBoxCategoryNames}
 
             <div className="ItemBoxesContainer">
                 {ItemBoxPropsArray.map((data, index) => (
-                    <div key={index} className={ selectedValue == index || selectedValue == -1 ? "ItemBoxes" : "Hidden ItemBoxes"}>
+                    <div key={index} className={ selectedCategory == index || selectedCategory == -1 ? "ItemBoxes" : "Hidden ItemBoxes"}>
                         <ThemeProvider theme={theme}>
                             <Typography variant="h5" className="menuHeader">
                                 {ItemBoxCategoryNames[index]}
                             </Typography>
                         </ThemeProvider>
-                        <ItemBox items={data.items} />
+                        <ItemBox items={data.items} onOk={handleItemBoxOk}/>
                     </div>
                 ))}
             </div>

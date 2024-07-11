@@ -17,14 +17,20 @@ export interface ItemBoxProps {
     items : ItemBoxInfo[];
 }
 
-export default function ItemBox( { items } : ItemBoxProps ) {
+export interface ItemBoxComponentProps extends ItemBoxProps {
+    onOk: (itemName: string, itemPrice: number, sweetness: number, temperature: number, toppings: string[], hasIce: boolean) => void;
+}
+
+export default function ItemBox( { items, onOk } : ItemBoxComponentProps ) {
 
 
     const [open, setOpen] = React.useState(false);
     const [selectedItemName, setSelectedItemName] = useState("");
+    const [selectedItemPrice, setSelectedItemPrice] = useState(0);
 
-    const handleClickOpen = (itemName: string) => {
-        setSelectedItemName(itemName)
+    const handleClickOpen = (itemName: string, itemPrice: number) => {
+        setSelectedItemName(itemName);
+        setSelectedItemPrice(itemPrice);
         setOpen(true);
     };
 
@@ -34,8 +40,8 @@ export default function ItemBox( { items } : ItemBoxProps ) {
         }
     };
 
-    const handleOk = () => {
-        console.log("Ok button pressed");
+    const handleOk = (sweetness: number, temperature: number, toppings: string[], hasIce: boolean) => {
+        onOk(selectedItemName, selectedItemPrice, sweetness, temperature, toppings, hasIce);
         setOpen(false);
     };
 
@@ -59,7 +65,7 @@ export default function ItemBox( { items } : ItemBoxProps ) {
         <div className="itemBoxContainer">
             {items.map((item, index) => {
                 return (
-                    <div key={index} onClick={() => handleClickOpen(item.name)} className="item">
+                    <div key={index} onClick={() => handleClickOpen(item.name, item.price)} className="item">
                         <img src={item.imgUrl} alt={item.imgAlt} className="itemImg"/>
                         <ThemeProvider theme={theme}>
                             <Typography variant="h5">

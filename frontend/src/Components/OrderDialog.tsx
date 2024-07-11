@@ -11,9 +11,11 @@ import DialogActions from '@mui/material/DialogActions';
 import Button from '@mui/material/Button';
 import { SelectChangeEvent } from "@mui/material";
 
+// Responsible for the dialog and sending the order info (sweetness, temperature, toppings, hasIce) to ItemBox
+
 interface OrderDialogProps {
     itemName: string;
-    onOk: (itemName: string, sweetness: number, temperature: number, toppings: string[], hasIce: boolean) => void;
+    onOk: (sweetness: number, temperature: number, toppings: string[], hasIce: boolean) => void;
     onCancel: () => void;
 }
 
@@ -42,8 +44,7 @@ export default function OrderDialog({itemName, onOk, onCancel}: OrderDialogProps
     }
 
     const handleOkClick = () => {
-        console.log(itemName, sweetness, temperature, toppings, hasIce);
-        onOk(itemName, sweetness, temperature, toppings, hasIce);
+        onOk(sweetness, temperature, toppings, hasIce);
     };
 
     return (
