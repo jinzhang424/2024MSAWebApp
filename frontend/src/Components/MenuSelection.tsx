@@ -104,7 +104,7 @@ export default function MenuSelection({ ItemBoxPropsArray, ItemBoxCategoryNames}
         <div className="MenuSelectionContainer">
             <div className="selectorContainer">
                 <ThemeProvider theme={theme}>
-                    <Typography variant="h3">Menu</Typography>
+                    <Typography variant="h3" style={{color: 'rgb(194, 133, 75)'}} className="menuHeader">Menu</Typography>
                 </ThemeProvider>
 
                 <FormControl sx={{ m: 1, minWidth: 140 }}>

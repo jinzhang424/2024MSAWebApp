@@ -9,6 +9,10 @@
     padding: 2vw;
 }
 
+.menuHeader {
+    text-decoration: underline;
+}
+
 .ItemBoxesContainer {
     height: 600px;
     overflow-y: auto;
