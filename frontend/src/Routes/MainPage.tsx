@@ -138,7 +138,7 @@ export default function Root() {
               </ThemeProvider>
 
               <div className="orderButton1Container">
-                <a href="tbd">
+                <a href="/order">
                   <Fab variant="extended" style={{ width: '130px' }}>
                       <ThemeProvider theme={theme}>
                         <Typography variant="body2">
@@ -165,7 +165,7 @@ export default function Root() {
               </ThemeProvider>
 
               <div className ="orderButton2Container">
-                <a href="tbd">
+                <a href="/order">
                   <Fab variant="extended" style={{ width: '130px' }}>
                     <ThemeProvider theme={theme}>
                       <Typography variant="body2">
