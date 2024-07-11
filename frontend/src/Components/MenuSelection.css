@@ -37,7 +37,7 @@
     height: 100px;
 }
 
-.orderItemContainer {
+.orderItems {
     display: flex;
     flex-direction: column;
     border-radius: 10px;
@@ -51,4 +51,8 @@
     justify-content: flex-start;
     flex-grow: 1;
     margin-left: 10px;
+}
+
+.orderSettings {
+    display: flex;
 }

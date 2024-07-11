@@ -12,6 +12,7 @@ import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 interface MenuSelectionProps {
     ItemBoxPropsArray: ItemBoxProps[];
@@ -45,6 +46,10 @@ export default function MenuSelection({ ItemBoxPropsArray, ItemBoxCategoryNames}
 
     const handleChange = (event: any) => {
         setSelectedCategory(event.target.value);
+    };
+
+    const handleRemoveItem = (index: number) => {
+        setOrderItems(prevItems => prevItems.filter((_, i) => i !== index));
     };
 
     const handleItemBoxOk = (itemName: string, itemPrice: number, sweetness: number, temperature: number, toppings: string[], hasIce: boolean) => {
@@ -136,38 +141,42 @@ export default function MenuSelection({ ItemBoxPropsArray, ItemBoxCategoryNames}
             </div>
 
             <div className="checkoutDialog">
-            <Dialog disableEscapeKeyDown open={open} onClose={handleClose}>
-                <DialogTitle>Checkout</DialogTitle>
-                <DialogContent>
-                    <ul>
-                        {orderItems.map((item, index) => (
-                            <li key={index} className="orderItemContainer">
-                                <ThemeProvider theme={theme}>
-                                    <Typography variant="body1">
-                                        {item.itemName}:  ${item.itemPrice}
-                                    </Typography>
-                                </ThemeProvider>
-                                <ThemeProvider theme={theme}>
-                                    <Typography variant="body2">
-                                        Sweetness: {item.sweetness} | Temperature: {item.temperature} | Toppings: {item.toppings.join(', ')} | Ice: {item.hasIce ? 'Yes' : 'No'}
-                                    </Typography>
-                                </ThemeProvider>
-                            </li>
-                        ))}
-                    </ul>
-                </DialogContent>
-                <DialogActions>
-                    <div className="totalCost">
-                        <ThemeProvider theme={theme}>
-                            <Typography variant="body2">
-                                Total: {orderItems.reduce((total, item) => total + item.itemPrice, 0)}$
-                            </Typography>
-                        </ThemeProvider>
-                    </div>
-                    <Button onClick={handleClose} style={{ color: 'rgb(231, 181, 106)' }}>Cancel</Button>
-                    <Button variant="contained" onClick={handleClose} style={{ backgroundColor: 'rgb(231, 181, 106)'}}>Checkout</Button>
-                </DialogActions>
-            </Dialog>
+                <Dialog disableEscapeKeyDown open={open} onClose={handleClose}>
+                    <DialogTitle>Checkout</DialogTitle>
+                    <DialogContent>
+                        <ul>
+                            {orderItems.map((item, index) => (
+                                <div className="orderItemContainer">
+                                    <li key={index} className="orderItems">
+                                    <ThemeProvider theme={theme}>
+                                        <Typography variant="body1">
+                                            {item.itemName}:  ${item.itemPrice}
+                                        </Typography>
+                                    </ThemeProvider>
+                                    <ThemeProvider theme={theme}>
+                                        <Typography variant="body2">
+                                            Sweetness: {item.sweetness} | Temperature: {item.temperature} | Toppings: {item.toppings.join(', ')} | Ice: {item.hasIce ? 'Yes' : 'No'}
+                                        </Typography>
+                                    </ThemeProvider>
+                                    <Button style={{color: 'rgb(231, 181, 106)'}} onClick={() => handleRemoveItem(index)} startIcon={<DeleteIcon />} className="removeButton"></Button>
+                                </li>
+                                </div>
+
+                            ))}
+                        </ul>
+                    </DialogContent>
+                    <DialogActions>
+                        <div className="totalCost">
+                            <ThemeProvider theme={theme}>
+                                <Typography variant="body2">
+                                    Total: {orderItems.reduce((total, item) => total + item.itemPrice, 0)}$
+                                </Typography>
+                            </ThemeProvider>
+                        </div>
+                        <Button onClick={handleClose} style={{ color: 'rgb(231, 181, 106)' }}>Cancel</Button>
+                        <Button variant="contained" onClick={handleClose} style={{ backgroundColor: 'rgb(231, 181, 106)'}}>Checkout</Button>
+                    </DialogActions>
+                </Dialog>
             </div>
         </div>
     )
