@@ -6,20 +6,24 @@ import OrderPage from "./Routes/OrderPage.tsx";
 import AboutUsPage from "./Routes/AboutUsPage.tsx";
 import Home from "./Routes/MainPage.tsx";
 import Test from "./Routes/test.tsx"
+import ErrorPage from "./Routes/ErrorPage.tsx"
 
 const router = createBrowserRouter([
 
   {
     path: "/",
     element: <Home/>,
+    errorElement: <ErrorPage />
   },
   {
     path: "/Order",
     element: <OrderPage />,
+    errorElement: <ErrorPage />
   },
   {
     path: "/about-us",
     element: <AboutUsPage  />,
+    errorElement: <ErrorPage />
   },
   {
     path: "/test",
