@@ -28,3 +28,20 @@
 .menuHeader {
     padding-left: 15px;
 }
+
+.checkoutButton {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 2vw;
+    height: 100px;
+}
+
+.orderItemContainer {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    border: 2px solid rgb(231, 181, 106);
+    margin-bottom: 10px;
+    padding: 10px;
+}

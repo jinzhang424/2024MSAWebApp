@@ -7,6 +7,11 @@ import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { useState } from "react"
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogTitle from '@mui/material/DialogTitle';
 
 interface MenuSelectionProps {
     ItemBoxPropsArray: ItemBoxProps[];
@@ -26,6 +31,17 @@ export default function MenuSelection({ ItemBoxPropsArray, ItemBoxCategoryNames}
 
     const [selectedCategory, setSelectedCategory] = useState(-1);
     const [orderItems, setOrderItems] = useState<OrderItemsInfo[]>([]);
+    const [open, setOpen] = useState(false);
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = (event: React.SyntheticEvent<unknown>, reason?: string) => {
+        if (reason !== 'backdropClick') {
+        setOpen(false);
+        }
+    };
 
     const handleChange = (event: any) => {
         setSelectedCategory(event.target.value);
@@ -44,6 +60,16 @@ export default function MenuSelection({ ItemBoxPropsArray, ItemBoxCategoryNames}
     };
 
     const theme = createTheme();
+
+    theme.typography.body1 = {
+        fontWeight: '600',
+        fontSize: '17px'
+    }
+
+    theme.typography.body2 = {
+        fontWeight: '500',
+        fontSize: '16px'
+    }
 
     theme.typography.h3 = {
         fontSize: '2.4rem',
@@ -65,9 +91,12 @@ export default function MenuSelection({ ItemBoxPropsArray, ItemBoxCategoryNames}
         },
     }
 
-    return (
-        <div className="MenuSelectionContainer">
+    
 
+    return (
+
+
+        <div className="MenuSelectionContainer">
             <div className="selectorContainer">
                 <ThemeProvider theme={theme}>
                     <Typography variant="h3">Menu</Typography>
@@ -98,6 +127,40 @@ export default function MenuSelection({ ItemBoxPropsArray, ItemBoxCategoryNames}
                         <ItemBox items={data.items} onOk={handleItemBoxOk}/>
                     </div>
                 ))}
+            </div>
+            
+            <div className="checkoutButton">
+                <Button variant="contained" size="large" style={{ backgroundColor: 'rgb(231, 181, 106)'}} onClick={handleClickOpen}>
+                    Checkout ({orderItems.length})
+                </Button>
+            </div>
+
+            <div className="checkoutDialog">
+            <Dialog disableEscapeKeyDown open={open} onClose={handleClose}>
+                <DialogTitle>Checkout</DialogTitle>
+                <DialogContent>
+                    <ul>
+                        {orderItems.map((item, index) => (
+                            <li key={index} className="orderItemContainer">
+                                <ThemeProvider theme={theme}>
+                                    <Typography variant="body1">
+                                        {item.itemName}:  ${item.itemPrice}
+                                    </Typography>
+                                </ThemeProvider>
+                                <ThemeProvider theme={theme}>
+                                    <Typography variant="body2">
+                                        Sweetness: {item.sweetness} | Temperature: {item.temperature} | Toppings: {item.toppings.join(', ')} | Ice: {item.hasIce ? 'Yes' : 'No'}
+                                    </Typography>
+                                </ThemeProvider>
+                            </li>
+                        ))}
+                    </ul>
+                </DialogContent>
+                <DialogActions>
+                    <Button onClick={handleClose}>Cancel</Button>
+                    <Button onClick={handleClose}>Ok</Button>
+                </DialogActions>
+            </Dialog>
             </div>
         </div>
     )
