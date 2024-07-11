@@ -157,8 +157,15 @@ export default function MenuSelection({ ItemBoxPropsArray, ItemBoxCategoryNames}
                     </ul>
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={handleClose}>Cancel</Button>
-                    <Button onClick={handleClose}>Ok</Button>
+                    <div className="totalCost">
+                        <ThemeProvider theme={theme}>
+                            <Typography variant="body2">
+                                Total: {orderItems.reduce((total, item) => total + item.itemPrice, 0)}$
+                            </Typography>
+                        </ThemeProvider>
+                    </div>
+                    <Button onClick={handleClose} style={{ color: 'rgb(231, 181, 106)' }}>Cancel</Button>
+                    <Button variant="contained" onClick={handleClose} style={{ backgroundColor: 'rgb(231, 181, 106)'}}>Checkout</Button>
                 </DialogActions>
             </Dialog>
             </div>

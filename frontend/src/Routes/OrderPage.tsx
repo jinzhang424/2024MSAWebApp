@@ -3,6 +3,23 @@ import NavigationBar from "../components/NavigationBar";
 import logo from "../data/images/logo.svg"
 import ContactsSection from "../components/ContactsSection"
 
+import MenuSelection from "../components/MenuSelection";
+import { milkTeaItems } from "../data/milkTeaItems.json";
+import { milkShakeItems } from "../data/milkShakeItems.json";
+import { ItemBoxProps, ItemBoxInfo } from "../components/ItemBox";
+
+const MilkTeaItems: ItemBoxInfo[] = milkTeaItems;
+const MilkShakeItems: ItemBoxInfo[] = milkShakeItems;
+
+let itemsArray: ItemBoxProps[] = [
+    {items: MilkTeaItems}, 
+    {items: MilkShakeItems}
+];
+let itemsCategoryNames: string[] = [
+    "Milk Teas", 
+    "Milk Shakes"
+]
+
 export default function OrderPage() {
   return (
     <div className="orderPageLayout">
@@ -12,6 +29,7 @@ export default function OrderPage() {
       </div>
 
       <div className="orderSection">
+        <MenuSelection ItemBoxPropsArray={itemsArray} ItemBoxCategoryNames={itemsCategoryNames}></MenuSelection>
       </div>
 
       <div className="orderPageContacts">
