@@ -1,4 +1,3 @@
-import * as React from 'react';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
@@ -19,8 +18,9 @@ const MenuProps = {
 };
 
 const names = [
-  'Pearls',
-  'Pudding',
+  'Waffles',
+  'Fudge',
+  'Chocolate Syrup',
 ];
 
 interface MultipleSelectCheckmarksProps {
@@ -28,7 +28,7 @@ interface MultipleSelectCheckmarksProps {
   onToppingsChange: (event: SelectChangeEvent<string[]>) => void;
 }
 
-export default function MultipleSelectCheckmarks({toppings, onToppingsChange}: MultipleSelectCheckmarksProps) {
+export default function MilkShakeToppingsSelect({toppings, onToppingsChange}: MultipleSelectCheckmarksProps) {
 
   return (
     <div>

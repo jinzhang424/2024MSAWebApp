@@ -4,19 +4,22 @@
             "name" : "Oreo Milk Shake",
             "price" : 8.5,
             "imgUrl" : "https://images.unsplash.com/photo-1572490122747-3968b75cc699?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            "imgAlt" : "Oreo Milk Shake Image"
+            "imgAlt" : "Oreo Milk Shake Image",
+            "type" : "MilkShake"
         },
         {
             "name" : "Strawberry Milk Shake",
             "price" : 9,
             "imgUrl" : "https://images.unsplash.com/photo-1611928237590-087afc90c6fd?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            "imgAlt" : "Strawberry Milk Shake Image"
+            "imgAlt" : "Strawberry Milk Shake Image",
+            "type" : "MilkShake"
         },
         {
             "name" : "Mango Milk Shake",
             "price" : 8.5,
             "imgUrl" : "https://images.unsplash.com/photo-1655476148304-1d1214683af4?q=80&w=1854&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            "imgAlt" : "Mango Milk Shake Image"
+            "imgAlt" : "Mango Milk Shake Image",
+            "type" : "MilkShake"
         }
     ]
 }

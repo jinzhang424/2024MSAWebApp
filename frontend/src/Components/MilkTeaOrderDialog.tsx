@@ -2,7 +2,7 @@ import DialogContent from '@mui/material/DialogContent';
 import { useState } from "react";
 import DialogTitle from '@mui/material/DialogTitle';
 import Slider from "./Slider";
-import MultipleSelectCheckmarks from "./ToppingsSelect" ;
+import MilkTeaToppingsSelect from "./MilkTeaToppingsSelect" ;
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
@@ -19,7 +19,7 @@ interface OrderDialogProps {
     onCancel: () => void;
 }
 
-export default function OrderDialog({itemName, onOk, onCancel}: OrderDialogProps) {
+export default function MilkTeaOrderDialog({itemName, onOk, onCancel}: OrderDialogProps) {
 
     const [sweetness, setSweetness] = useState<number>(3);
     const [temperature, setTemperature] = useState<number>(3);
@@ -63,7 +63,7 @@ export default function OrderDialog({itemName, onOk, onCancel}: OrderDialogProps
                             </Typography>
                         <Slider value={temperature} onChange={handleTemperatureChange}/>
                     </div>
-                    <MultipleSelectCheckmarks toppings={toppings} onToppingsChange={handleToppingsChange}/>
+                    <MilkTeaToppingsSelect toppings={toppings} onToppingsChange={handleToppingsChange}/>
                     <FormGroup>
                         <FormControlLabel control={<Checkbox checked={hasIce} onChange={handleIceChange}/>} label="Ice" />
                     </FormGroup>

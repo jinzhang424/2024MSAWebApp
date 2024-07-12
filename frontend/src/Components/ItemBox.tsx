@@ -3,7 +3,8 @@ import Typography from '@mui/material/Typography';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import * as React from 'react';
 import Dialog from '@mui/material/Dialog';
-import OrderDialog from "./OrderDialog";
+import MilkTeaOrderDialog from "./MilkTeaOrderDialog";
+import MilkShakeOrderDialog from "./MilkShakeOrderDialog";
 import { useState } from "react";
 
 export interface ItemBoxInfo {
@@ -11,6 +12,7 @@ export interface ItemBoxInfo {
     price : number;
     imgUrl : string;
     imgAlt : string;
+    type: 'MilkTea' | 'MilkShake';
 }
 
 export interface ItemBoxProps {
@@ -18,19 +20,22 @@ export interface ItemBoxProps {
 }
 
 export interface ItemBoxComponentProps extends ItemBoxProps {
-    onOk: (itemName: string, itemPrice: number, sweetness: number, temperature: number, toppings: string[], hasIce: boolean) => void;
+    onOkMilkTea: (itemName: string, itemPrice: number, sweetness: number, temperature: number, toppings: string[], hasIce: boolean) => void;
+    onOkMilkShake: (toppings: string[]) => void;
 }
 
-export default function ItemBox( { items, onOk } : ItemBoxComponentProps ) {
+export default function ItemBox( { items, onOkMilkTea, onOkMilkShake } : ItemBoxComponentProps ) {
 
 
     const [open, setOpen] = React.useState(false);
     const [selectedItemName, setSelectedItemName] = useState("");
     const [selectedItemPrice, setSelectedItemPrice] = useState(0);
+    const [selectedItemType, setSelectedItemType] = useState<'MilkTea' | 'MilkShake'>('MilkTea');
 
-    const handleClickOpen = (itemName: string, itemPrice: number) => {
+    const handleClickOpen = (itemName: string, itemPrice: number, itemType: 'MilkTea' | 'MilkShake') => {
         setSelectedItemName(itemName);
         setSelectedItemPrice(itemPrice);
+        setSelectedItemType(itemType);
         setOpen(true);
     };
 
@@ -40,13 +45,29 @@ export default function ItemBox( { items, onOk } : ItemBoxComponentProps ) {
         }
     };
 
-    const handleOk = (sweetness: number, temperature: number, toppings: string[], hasIce: boolean) => {
-        onOk(selectedItemName, selectedItemPrice, sweetness, temperature, toppings, hasIce);
+    const handleMilkTeaOk = (sweetness: number, temperature: number, toppings: string[], hasIce: boolean) => {
+        onOkMilkTea(selectedItemName, selectedItemPrice, sweetness, temperature, toppings, hasIce);
+        setOpen(false);
+    };
+
+    const handleMilkShakeOk = (toppings: string[]) => {
+        onOkMilkShake(toppings);
         setOpen(false);
     };
 
     const handleCancel = () => {
         setOpen(false);
+    };
+
+    const renderDialog = () => {
+        switch (selectedItemType) {
+            case 'MilkTea':
+                return <MilkTeaOrderDialog itemName={selectedItemName} onOk={handleMilkTeaOk} onCancel={handleCancel} />;
+            case 'MilkShake':
+                return <MilkShakeOrderDialog itemName={selectedItemName} onOk={handleMilkShakeOk} onCancel={handleCancel} />;
+            default:
+                return null;
+        }
     };
 
     const theme = createTheme();
@@ -65,7 +86,7 @@ export default function ItemBox( { items, onOk } : ItemBoxComponentProps ) {
         <div className="itemBoxContainer">
             {items.map((item, index) => {
                 return (
-                    <div key={index} onClick={() => handleClickOpen(item.name, item.price)} className="item">
+                    <div key={index} onClick={() => handleClickOpen(item.name, item.price, item.type)} className="item">
                         <img src={item.imgUrl} alt={item.imgAlt} className="itemImg"/>
                         <ThemeProvider theme={theme}>
                             <Typography variant="h5">
@@ -80,7 +101,7 @@ export default function ItemBox( { items, onOk } : ItemBoxComponentProps ) {
             })}
 
             <Dialog disableEscapeKeyDown open={open} onClose={handleClose} className="orderDialogContainer">
-                <OrderDialog itemName={selectedItemName} onOk={handleOk} onCancel={handleCancel} />
+                {renderDialog()}
             </Dialog>
         </div>
     )

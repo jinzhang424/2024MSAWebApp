@@ -4,19 +4,22 @@
             "name" : "Original Milk Tea",
             "price" : 9.90,
             "imgUrl" : "https://images.pexels.com/photos/11100423/pexels-photo-11100423.jpeg",
-            "imgAlt" : "Original Milk Tea Image"
+            "imgAlt" : "Original Milk Tea Image",
+            "type" : "MilkTea"
         },
         {
             "name" : "Strawberry Milk Tea",
             "price" : 10.00,
             "imgUrl" : "https://media.istockphoto.com/id/1213739503/photo/strawberry-bubble-bobba-tea.jpg?s=1024x1024&w=is&k=20&c=KPNWSEHCVG77HeUxjEMZPsWw1qiWjEgxUXVO345raDQ=",
-            "imgAlt" : "Strawberry Milk Tea Image"
+            "imgAlt" : "Strawberry Milk Tea Image",
+            "type" : "MilkTea"
         },
         {
             "name" : "Mango Milk Tea",
             "price" : 10.00,
             "imgUrl" : "https://media.istockphoto.com/id/2151635779/photo/food-photos-various-entrees-appetizers-deserts-etc.jpg?s=1024x1024&w=is&k=20&c=ggqV_Crhx1FI51StdBTW24hXhInzKom7MEJtYZpNTpM=",
-            "imgAlt" : "Mango Milk Tea Image"
+            "imgAlt" : "Mango Milk Tea Image",
+            "type" : "MilkTea"
         }
     ]
 }
