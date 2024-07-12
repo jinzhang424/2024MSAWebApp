@@ -3,45 +3,45 @@ using Models;
 
 namespace Repositories {
 
-    public class MilkTeaRepository : IMilkTeaRepository {
+    public class OrderRepository : IOrderRepository {
 
-        private readonly MilkTeaContext _context;
+        private readonly OrderContext _context;
 
-        public MilkTeaRepository(MilkTeaContext context) {
+        public OrderRepository(OrderContext context) {
             _context = context;
         }
 
-        public async Task<IEnumerable<MilkTea>> GetAllMilkTeasAsync() {
-            return await _context.MilkTea.ToListAsync();
+        public async Task<IEnumerable<Order>> GetAllOrdersAsync() {
+            return await _context.Order.ToListAsync();
         }
 
-        public async Task<Models.MilkTea> GetMilkTeaByIdAsync(long id) {
-            return await _context.MilkTea.FindAsync(id);
+        public async Task<Models.Order> GetOrderByIdAsync(long id) {
+            return await _context.Order.FindAsync(id);
         }
 
-        public async Task AddMilkTeaAsync(MilkTea milkTea) {
-            _context.MilkTea.Add(milkTea);
+        public async Task AddOrderAsync(Order order) {
+            _context.Order.Add(order);
             await _context.SaveChangesAsync();
         }
-        public async Task UpdateMilkTeaAsync(MilkTea milkTea) {
-            _context.Entry(milkTea).State = EntityState.Modified;
+        public async Task UpdateOrderAsync(Order order) {
+            _context.Entry(order).State = EntityState.Modified;
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteMilkTeaAsync(long id) {
-            var milkTea = await _context.MilkTea.FindAsync(id);
-            if (milkTea != null) {
-                _context.MilkTea.Remove(milkTea);
+        public async Task DeleteOrderAsync(long id) {
+            var order = await _context.Order.FindAsync(id);
+            if (order != null) {
+                _context.Order.Remove(order);
                 await _context.SaveChangesAsync();
             }
         }
 
-        public async Task<bool> MilkTeaExistsAsync(long id) {
-            return await _context.MilkTea.AnyAsync(e => e.Id == id);
+        public async Task<bool> OrderExistsAsync(long id) {
+            return await _context.Order.AnyAsync(e => e.Id == id);
         }
 
-        public async Task BulkAddMilkTeasAsync(IEnumerable<MilkTea> milkTea) {
-            await _context.MilkTea.AddRangeAsync(milkTea);
+        public async Task BulkAddOrdersAsync(IEnumerable<Order> order) {
+            await _context.Order.AddRangeAsync(order);
             await _context.SaveChangesAsync();
         }
     } 

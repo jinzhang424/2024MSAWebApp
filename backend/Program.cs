@@ -13,16 +13,16 @@ builder.Services.AddSwaggerGen();
 // Configure DbContext before building the app
 if (builder.Environment.IsDevelopment())
 {
-    builder.Services.AddDbContext<MilkTeaContext>(options =>
-        options.UseInMemoryDatabase("MilkTea"));
+    builder.Services.AddDbContext<OrderContext>(options =>
+        options.UseInMemoryDatabase("Order"));
 }
 else
 {
-    builder.Services.AddDbContext<MilkTeaContext>(options =>
-        options.UseSqlServer(builder.Configuration.GetConnectionString("MilkTeaContext") ?? throw new InvalidOperationException("Connection string 'MilkTeaContext' not found.")));
+    builder.Services.AddDbContext<OrderContext>(options =>
+        options.UseSqlServer(builder.Configuration.GetConnectionString("OrderContext") ?? throw new InvalidOperationException("Connection string 'OrderContext' not found.")));
 }
 
-builder.Services.AddScoped<IMilkTeaRepository, MilkTeaRepository>();
+builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 
 builder.Services.AddCors(options => {
     options.AddPolicy("AllowReactApp",
