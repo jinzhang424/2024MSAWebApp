@@ -19,7 +19,7 @@ interface MenuSelectionProps {
     ItemBoxCategoryNames : string[];
 }
 
-interface OrderItemsInfo {
+interface MilkTeaOrderInfo {
     itemName: string;
     itemPrice: number;
     sweetness: number;
@@ -28,10 +28,17 @@ interface OrderItemsInfo {
     hasIce: boolean;
 }
 
+interface MilkShakeOrderInfo {
+    itemName: string;
+    itemPrice: number;
+    toppings: string[];
+}
+
 export default function MenuSelection({ ItemBoxPropsArray, ItemBoxCategoryNames}: MenuSelectionProps) {
 
     const [selectedCategory, setSelectedCategory] = useState(-1);
-    const [orderItems, setOrderItems] = useState<OrderItemsInfo[]>([]);
+    const [milkTeaOrders, setMilkTeaOrders] = useState<MilkTeaOrderInfo[]>([]);
+    const [milkShakeOrders, setMilkShakeOrders] = useState<MilkShakeOrderInfo[]>([]);
     const [open, setOpen] = useState(false);
 
     const handleClickOpen = () => {
@@ -49,11 +56,11 @@ export default function MenuSelection({ ItemBoxPropsArray, ItemBoxCategoryNames}
     };
 
     const handleRemoveItem = (index: number) => {
-        setOrderItems(prevItems => prevItems.filter((_, i) => i !== index));
+        setMilkTeaOrders(prevItems => prevItems.filter((_, i) => i !== index));
     };
 
-    const handleItemBoxOk = (itemName: string, itemPrice: number, sweetness: number, temperature: number, toppings: string[], hasIce: boolean) => {
-        const newItem: OrderItemsInfo = {
+    const handleMilkTeaItemBoxOk = (itemName: string, itemPrice: number, sweetness: number, temperature: number, toppings: string[], hasIce: boolean) => {
+        const newItem: MilkTeaOrderInfo = {
             itemName,
             itemPrice,
             sweetness,
@@ -61,7 +68,16 @@ export default function MenuSelection({ ItemBoxPropsArray, ItemBoxCategoryNames}
             toppings,
             hasIce
         };
-        setOrderItems([...orderItems, newItem]);
+        setMilkTeaOrders([...milkTeaOrders, newItem]);
+    };
+
+    const handleMilkShakeItemBoxOk = (itemName: string, itemPrice: number, toppings: string[]) => {
+        const newItem: MilkShakeOrderInfo = {
+            itemName,
+            itemPrice,
+            toppings
+        };
+        setMilkShakeOrders([...milkShakeOrders, newItem]);
     };
 
     const theme = createTheme();
@@ -129,14 +145,14 @@ export default function MenuSelection({ ItemBoxPropsArray, ItemBoxCategoryNames}
                                 {ItemBoxCategoryNames[index]}
                             </Typography>
                         </ThemeProvider>
-                        <ItemBox items={data.items} onOk={handleItemBoxOk}/>
+                        <ItemBox items={data.items} onOkMilkTea={handleMilkTeaItemBoxOk} onOkMilkShake={handleMilkShakeItemBoxOk}/>
                     </div>
                 ))}
             </div>
             
             <div className="checkoutButton">
                 <Button variant="contained" size="large" style={{ backgroundColor: 'rgb(231, 181, 106)'}} onClick={handleClickOpen}>
-                    Checkout ({orderItems.length})
+                    Checkout ({milkTeaOrders.length + milkShakeOrders.length})
                 </Button>
             </div>
 
@@ -145,7 +161,7 @@ export default function MenuSelection({ ItemBoxPropsArray, ItemBoxCategoryNames}
                     <DialogTitle>Checkout</DialogTitle>
                     <DialogContent>
                         <ul>
-                            {orderItems.map((item, index) => (
+                            {milkTeaOrders.map((item, index) => (
                                 <div className="orderItemContainer">
                                     <li key={index} className="orderItems">
                                     <ThemeProvider theme={theme}>
@@ -163,13 +179,32 @@ export default function MenuSelection({ ItemBoxPropsArray, ItemBoxCategoryNames}
                                 </div>
 
                             ))}
+
+                            {milkShakeOrders.map((item, index) => (
+                                <div className="orderItemContainer">
+                                    <li key={index} className="orderItems">
+                                    <ThemeProvider theme={theme}>
+                                        <Typography variant="body1">
+                                            {item.itemName}:  ${item.itemPrice}
+                                        </Typography>
+                                    </ThemeProvider>
+                                    <ThemeProvider theme={theme}>
+                                        <Typography variant="body2">
+                                            Toppings: {item.toppings.join(', ')}
+                                        </Typography>
+                                    </ThemeProvider>
+                                    <Button style={{color: 'rgb(231, 181, 106)'}} onClick={() => handleRemoveItem(index)} startIcon={<DeleteIcon />} className="removeButton"></Button>
+                                </li>
+                                </div>
+
+                            ))}
                         </ul>
                     </DialogContent>
                     <DialogActions>
                         <div className="totalCost">
                             <ThemeProvider theme={theme}>
                                 <Typography variant="body2">
-                                    Total: {orderItems.reduce((total, item) => total + item.itemPrice, 0)}$
+                                    Total: {milkTeaOrders.reduce((total, item) => total + item.itemPrice, 0) + milkShakeOrders.reduce((total, item) => total + item.itemPrice, 0)}$
                                 </Typography>
                             </ThemeProvider>
                         </div>

@@ -7,6 +7,7 @@ import AboutUsPage from "./Routes/AboutUsPage.tsx";
 import Home from "./Routes/MainPage.tsx";
 import Test from "./Routes/test.tsx"
 import ErrorPage from "./Routes/ErrorPage.tsx"
+import PaymentPage from "./Routes/PaymentPage.tsx";
 
 const router = createBrowserRouter([
 
@@ -23,6 +24,11 @@ const router = createBrowserRouter([
   {
     path: "/about-us",
     element: <AboutUsPage  />,
+    errorElement: <ErrorPage />
+  },
+  {
+    path: "/payment",
+    element: <PaymentPage  />,
     errorElement: <ErrorPage />
   },
   {

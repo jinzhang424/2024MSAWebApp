@@ -21,7 +21,7 @@ export interface ItemBoxProps {
 
 export interface ItemBoxComponentProps extends ItemBoxProps {
     onOkMilkTea: (itemName: string, itemPrice: number, sweetness: number, temperature: number, toppings: string[], hasIce: boolean) => void;
-    onOkMilkShake: (toppings: string[]) => void;
+    onOkMilkShake: (itemName: string, itemPrice: number, toppings: string[]) => void;
 }
 
 export default function ItemBox( { items, onOkMilkTea, onOkMilkShake } : ItemBoxComponentProps ) {
@@ -51,7 +51,7 @@ export default function ItemBox( { items, onOkMilkTea, onOkMilkShake } : ItemBox
     };
 
     const handleMilkShakeOk = (toppings: string[]) => {
-        onOkMilkShake(toppings);
+        onOkMilkShake(selectedItemName, selectedItemPrice, toppings);
         setOpen(false);
     };
 
