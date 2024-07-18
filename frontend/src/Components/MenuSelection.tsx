@@ -13,13 +13,14 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import DeleteIcon from '@mui/icons-material/Delete';
+import { useNavigate } from 'react-router-dom'
 
 interface MenuSelectionProps {
     ItemBoxPropsArray: ItemBoxProps[];
     ItemBoxCategoryNames : string[];
 }
 
-interface MilkTeaOrderInfo {
+export interface MilkTeaOrderInfo {
     itemName: string;
     itemPrice: number;
     sweetness: number;
@@ -28,7 +29,7 @@ interface MilkTeaOrderInfo {
     hasIce: boolean;
 }
 
-interface MilkShakeOrderInfo {
+export interface MilkShakeOrderInfo {
     itemName: string;
     itemPrice: number;
     toppings: string[];
@@ -40,6 +41,17 @@ export default function MenuSelection({ ItemBoxPropsArray, ItemBoxCategoryNames}
     const [milkTeaOrders, setMilkTeaOrders] = useState<MilkTeaOrderInfo[]>([]);
     const [milkShakeOrders, setMilkShakeOrders] = useState<MilkShakeOrderInfo[]>([]);
     const [open, setOpen] = useState(false);
+
+    const navigate = useNavigate();
+
+    const handleCheckout = () => {
+    navigate('/payment', {
+        state: {
+        milkTeaOrders,
+        milkShakeOrders
+        }
+    });
+    };
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -164,18 +176,18 @@ export default function MenuSelection({ ItemBoxPropsArray, ItemBoxCategoryNames}
                             {milkTeaOrders.map((item, index) => (
                                 <div className="orderItemContainer">
                                     <li key={index} className="orderItems">
-                                    <ThemeProvider theme={theme}>
-                                        <Typography variant="body1">
-                                            {item.itemName}:  ${item.itemPrice}
-                                        </Typography>
-                                    </ThemeProvider>
-                                    <ThemeProvider theme={theme}>
-                                        <Typography variant="body2">
-                                            Sweetness: {item.sweetness} | Temperature: {item.temperature} | Toppings: {item.toppings.join(', ')} | Ice: {item.hasIce ? 'Yes' : 'No'}
-                                        </Typography>
-                                    </ThemeProvider>
-                                    <Button style={{color: 'rgb(231, 181, 106)'}} onClick={() => handleRemoveItem(index)} startIcon={<DeleteIcon />} className="removeButton"></Button>
-                                </li>
+                                        <ThemeProvider theme={theme}>
+                                            <Typography variant="body1">
+                                                {item.itemName}:  ${item.itemPrice}
+                                            </Typography>
+                                        </ThemeProvider>
+                                        <ThemeProvider theme={theme}>
+                                            <Typography variant="body2">
+                                                Sweetness: {item.sweetness} | Temperature: {item.temperature} | Toppings: {item.toppings.join(', ')} | Ice: {item.hasIce ? 'Yes' : 'No'}
+                                            </Typography>
+                                        </ThemeProvider>
+                                        <Button style={{color: 'rgb(231, 181, 106)'}} onClick={() => handleRemoveItem(index)} startIcon={<DeleteIcon />} className="removeButton"></Button>
+                                    </li>
                                 </div>
 
                             ))}
@@ -183,18 +195,18 @@ export default function MenuSelection({ ItemBoxPropsArray, ItemBoxCategoryNames}
                             {milkShakeOrders.map((item, index) => (
                                 <div className="orderItemContainer">
                                     <li key={index} className="orderItems">
-                                    <ThemeProvider theme={theme}>
-                                        <Typography variant="body1">
-                                            {item.itemName}:  ${item.itemPrice}
-                                        </Typography>
-                                    </ThemeProvider>
-                                    <ThemeProvider theme={theme}>
-                                        <Typography variant="body2">
-                                            Toppings: {item.toppings.join(', ')}
-                                        </Typography>
-                                    </ThemeProvider>
-                                    <Button style={{color: 'rgb(231, 181, 106)'}} onClick={() => handleRemoveItem(index)} startIcon={<DeleteIcon />} className="removeButton"></Button>
-                                </li>
+                                        <ThemeProvider theme={theme}>
+                                            <Typography variant="body1">
+                                                {item.itemName}:  ${item.itemPrice}
+                                            </Typography>
+                                        </ThemeProvider>
+                                        <ThemeProvider theme={theme}>
+                                            <Typography variant="body2">
+                                                Toppings: {item.toppings.join(', ')}
+                                            </Typography>
+                                        </ThemeProvider>
+                                        <Button style={{color: 'rgb(231, 181, 106)'}} onClick={() => handleRemoveItem(index)} startIcon={<DeleteIcon />} className="removeButton"></Button>
+                                    </li>
                                 </div>
 
                             ))}
@@ -209,7 +221,9 @@ export default function MenuSelection({ ItemBoxPropsArray, ItemBoxCategoryNames}
                             </ThemeProvider>
                         </div>
                         <Button onClick={handleClose} style={{ color: 'rgb(231, 181, 106)' }}>Cancel</Button>
-                        <Button variant="contained" onClick={handleClose} style={{ backgroundColor: 'rgb(231, 181, 106)'}}>Checkout</Button>
+                        <Button variant="contained" onClick={handleCheckout} style={{ backgroundColor: 'rgb(231, 181, 106)'}}>
+                            Checkout
+                        </Button>
                     </DialogActions>
                 </Dialog>
             </div>
