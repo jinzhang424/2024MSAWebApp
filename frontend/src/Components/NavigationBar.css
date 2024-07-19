@@ -1,19 +1,15 @@
 * {
     box-sizing: border-box;
-}
-
-body {
     padding: 0;
     margin: 0;
 }
 
 .navBarContainer {
-    width: 100vw;
+    width: 100%;
     padding: 0.5% 1vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 1.5vw;
 }
 
 .logoLink {
