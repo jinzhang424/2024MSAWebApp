@@ -22,9 +22,11 @@ body {
 /* Section 1 */
 .section1 {
   display: grid;
-  width: 100vw;
+  width: 100%;
   aspect-ratio: 16 / 9;
   justify-content: center;
+
+  grid-template-columns: 100%;
 }
 
 .navBar {
@@ -32,7 +34,7 @@ body {
   
   grid-row: 1 / 2;
   grid-column: 1 / 2;
-  
+  width: 100%;
 }
 
 .imgSlider {

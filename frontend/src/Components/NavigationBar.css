@@ -6,7 +6,6 @@
 
 .navBarContainer {
     width: 100%;
-    padding: 0.5% 1vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -76,7 +75,7 @@ nav a:hover::before {
 @media (max-width: 600px) {
 
     .navBarContainer {
-        height: 100v;
+        height: 100vh;
         align-items: unset;
         padding: 0;
     }
