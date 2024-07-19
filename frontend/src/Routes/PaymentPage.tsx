@@ -7,6 +7,7 @@ import TextField from '@mui/material/TextField';
 import { useLocation } from 'react-router-dom';
 import { MilkTeaOrderInfo } from '../components/MenuSelection';
 import { MilkShakeOrderInfo } from '../components/MenuSelection';
+import Button from '@mui/material/Button'
 
 export default function PaymentPage() {
 
@@ -17,11 +18,13 @@ export default function PaymentPage() {
     theme.typography.h4 = {
         fontWeight: '700',
         fontSize: '1.8rem',
+        color: 'rgb(231, 181, 106)'
     }
 
     theme.typography.h6 = {
         fontWeight: '600',
         fontSize: '1.2rem',
+        color: 'rgb(231, 181, 106)'
     }
 
     theme.typography.body1 = {
@@ -131,6 +134,8 @@ export default function PaymentPage() {
                         </div>
                     </div>
                 </div>
+
+                <Button variant="contained" style={{ backgroundColor: 'rgb(231, 181, 106)' }}>Confirm</Button>
             </div>
             
             <div className="paymentPageContact">
