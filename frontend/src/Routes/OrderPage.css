@@ -26,8 +26,9 @@
 }
 
 /* Contacts Section*/
-.aboutUsContactsSection {
-    width: 100vw;
+.orderPageContacts {
+    width: 100%;
     height: 50vh;
     overflow: hidden;
 }
+

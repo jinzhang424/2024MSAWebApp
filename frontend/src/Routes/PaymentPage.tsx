@@ -132,8 +132,10 @@ export default function PaymentPage() {
                     </div>
                 </div>
             </div>
-
-            <ContactsSection/>
+            
+            <div className="paymentPageContact">
+                <ContactsSection/>
+            </div>
         </div>
     )
 }
