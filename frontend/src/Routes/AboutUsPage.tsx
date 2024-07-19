@@ -44,9 +44,7 @@ export default function AboutUsPage() {
         <div className="aboutUsLayout">
 
             <div className="aboutUsSection1">
-                <div className="aboutUsPageNavBar">
-                    <NavigationBar />
-                </div>
+                <NavigationBar />
             </div>
 
             <div className="aboutUsSection2">
