@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react"; 
 import './NavigationBar.css';
 import imgLogo from "../data/images/logo.svg";
 
