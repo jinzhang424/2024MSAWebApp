@@ -8,12 +8,27 @@ import { useLocation } from 'react-router-dom';
 import { MilkTeaOrderInfo } from '../components/MenuSelection';
 import { MilkShakeOrderInfo } from '../components/MenuSelection';
 import Button from '@mui/material/Button'
+import { postOrder } from '../Services/OrderService';
 
 export default function PaymentPage() {
 
     const location = useLocation();
     const { milkTeaOrders, milkShakeOrders } = location.state || { milkTeaOrders: [], milkShakeOrders: [] };
     const theme = createTheme();
+
+    const handleConfirm = async () => {
+        const orderData = {
+            milkTeaOrders,
+            milkShakeOrders
+        };
+
+        try {
+            const response = await postOrder(orderData);
+            console.log('Order successfully posted:', response);
+        } catch (error) {
+            console.error('Eorror posting order:', error);
+        }
+    }
 
     theme.typography.h4 = {
         fontWeight: '700',
@@ -135,7 +150,9 @@ export default function PaymentPage() {
                     </div>
                 </div>
 
-                <Button variant="contained" style={{ backgroundColor: 'rgb(231, 181, 106)' }}>Confirm</Button>
+                <Button variant="contained" style={{ backgroundColor: 'rgb(231, 181, 106)' }} onClick={handleConfirm}>
+                    Confirm
+                </Button>
             </div>
             
             <div className="paymentPageContact">
