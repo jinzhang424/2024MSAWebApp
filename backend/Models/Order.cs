@@ -6,7 +6,5 @@ namespace Models {
         public int Sweetness { get; set; }
         public int Temperature { get; set; }
         public string[]? Toppings { get; set; }
-        public string? imgUrl { get; set; }
-        public string? imgAlt { get; set; }
     }
 }
